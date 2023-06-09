@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 
+from cart.forms import CartAddProductForm
 from shop.models import Product, Category
 
 
@@ -26,6 +27,8 @@ class ProductDetail(DetailView):
                                     id=kwargs['id'],
                                     slug=kwargs['slug'],
                                     available=True)
+        cart_product_form = CartAddProductForm()
         return render(request,
                       'shop/product/detail.html',
-                      {'product': product})
+                      {'product': product,
+                       'cart_product_form': cart_product_form})
