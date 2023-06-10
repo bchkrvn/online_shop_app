@@ -10,7 +10,8 @@ def order_created(order_id):
     subject = f'Заказ №{order_id}'
     message = f'{order.first_name} {order.last_name} \n' \
               f'Вы успешно оформили заказ в магазине Семерочка. \n' \
-              f'Номер вашего заказа - {order_id}.\n\n' \
+              f'Номер вашего заказа - {order_id}.\n' \
+              f'Адрес доставки: {order.city}, {order.address}\n\n' \
               f'Ваш заказ:\n'
 
     for item in order.items.all():
