@@ -6,19 +6,22 @@ body {
     font-family:helvetica, sans-serif;
 }
 
+/* шрифт */
 h1, h2, h3, h4, h5 , h6 {
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
 }
 
+/* цвет ссылок */
 a {
     text-decoration:none;
     color:#5993bb;
 }
 
+/* цвет ссылок при наведении */
 a:hover {
     color:#77b6e2;
 }
-
+/* кнопки отправить */
 a.button, input[type="submit"] {
     color:#fff;
     background:#5993bb;
@@ -77,7 +80,7 @@ table.cart img {
 }
 
 tbody td.num {
-    text-align:right;
+    text-align:left;
 }
 
 td input[type="submit"] {
@@ -168,6 +171,7 @@ ul.errorlist {
     display:block;
 }
 
+/* цвет выбранной категории ссылок */
 #sidebar ul li.selected {
     background:#5993bb;
     border-radius:4px;
@@ -185,11 +189,11 @@ ul.errorlist {
 }
 
 .product-list .item {
-    width:25%;
+    width:20%;
     padding:10px 20px 10px 0;
     float:left;
     text-align:center;
-    line-height:1.2;
+    line-height:1.5;
 }
 
 .product-list .item img {
@@ -223,6 +227,9 @@ ul.errorlist {
 
 .order-form {
     float:left;
+}
+.order-form p {
+    width:50%;
 }
 
 .order-info {
@@ -319,7 +326,7 @@ ul.errorlist {
 form div.field {
     font-size:13px;
     color:#666;
-    width:300px;
+    width:200px;
     height:22px;
     margin-bottom:10px;
     padding:6px 12px;

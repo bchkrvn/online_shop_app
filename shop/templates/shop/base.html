@@ -1,33 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{% block title %}My shop{% endblock %}</title>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Семерочка{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
-  </head>
-  <body>
-    <div id="header">
-      <a href="/" class="logo">My shop</a>
-    </div>
-    <div id="subheader">
-      <div class="cart">
+</head>
+<body>
+<div id="header">
+    <a href="/" class="logo"><img src="{% static "img/semerochka.png" %}" height='25px' width='25px'> Семерочка</a>
+</div>
+<div id="subheader">
+    <div class="cart">
         {% with total_items=cart|length %}
-          {% if total_items > 0 %}
-            Your cart:
-            <a href="{% url "cart:cart_detail" %}">
-              {{ total_items }} item{{ total_items|pluralize }},
-              ${{ cart.get_total_price }}
-            </a>
-          {% elif not order %}
-            Your cart is empty.
-          {% endif %}
+        {% if total_items > 0 %}
+        <img src="{% static "img/cart.png" %}" height='25px' width='25px'> Ваша корзина:
+        <a href="{% url "cart:cart_detail" %}">
+        {{ total_items }}
+        {% if total_items == 1 %}
+        товар
+        {% elif total_items < 5 %}
+        товара
+        {% else %}
+        товаров
+        {% endif %}
+        на {{ cart.get_total_price }} ₽
+        </a>
+        {% elif not order %}
+        <img src="{% static "img/cart.png" %}" height='25px' width='25px'> Ваша корзина пуста.
+        {% endif %}
         {% endwith %}
-      </div>
     </div>
-    <div id="content">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </body>
+</div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
 </html>
