@@ -11,8 +11,8 @@ class Category(models.Model):
         indexes = [
             models.Index(fields=['name'])
         ]
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
     def __str__(self):
         return self.name
@@ -31,6 +31,7 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    quantity = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['name']
@@ -39,9 +40,11 @@ class Product(models.Model):
             models.Index(fields=['name']),
             models.Index(fields=['-created']),
         ]
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('shop:product_detail', args=[self.id, self.slug])
+        return reverse('shop:product_detail', args=[self.pk, self.slug])

@@ -7,7 +7,7 @@ from orders.models import OrderItem
 from .tasks import order_created
 
 
-class OrderCreateFormView(View):
+class OrderCreateView(View):
     def post(self, request, *args, **kwargs):
         cart = Cart(request)
         form = OrderCreateForm(request.POST)

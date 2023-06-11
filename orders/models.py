@@ -1,12 +1,11 @@
 from django.db import models
 
 from shop.models import Product
+from users.models import User
 
 
 class Order(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField()
+    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE)
     address = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=20)
     city = models.CharField(max_length=100)
@@ -19,6 +18,8 @@ class Order(models.Model):
         indexes = [
             models.Index(fields=['-created'])
         ]
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
 
     def __str__(self):
         return f'Order {self.id}'
@@ -43,3 +44,7 @@ class OrderItem(models.Model):
 
     def get_cost(self):
         return self.price * self.quantity
+
+    class Meta:
+        verbose_name = 'Позиция заказа'
+        verbose_name_plural = 'Позиции заказа'

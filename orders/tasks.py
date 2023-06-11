@@ -11,14 +11,13 @@ def order_created(order_id):
     message = f'{order.first_name} {order.last_name} \n' \
               f'Вы успешно оформили заказ в магазине Семерочка. \n' \
               f'Номер вашего заказа - {order_id}.\n' \
-              f'Адрес доставки: {order.city}, {order.address}\n\n' \
+              f'Адрес доставки: {order.postal_code}, {order.city}, {order.address}\n\n' \
               f'Ваш заказ:\n'
 
-    for item in order.items.all():
-        message += f'{item.product} - {item.quantity} шт.\n'
+    for i, item in enumerate(order.items.all(), 1):
+        message += f'{i}) {item.product} - {item.quantity} шт.\n'
 
     message += f"\nОбщая стоимость - {order.get_total_cost()} ₽"
 
     mail_sent = send_mail(subject, message, settings.EMAIL_HOST_USER, [order.email])
-
     return mail_sent

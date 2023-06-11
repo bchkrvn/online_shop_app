@@ -6,6 +6,7 @@ from shop.models import Product, Category
 
 
 class ProductsList(ListView):
+
     def get(self, request, category_slug=None, *args, **kwargs):
         category = None
         products = Product.objects.filter(available=True)
@@ -22,6 +23,7 @@ class ProductsList(ListView):
 
 
 class ProductDetail(DetailView):
+
     def get(self, request, *args, **kwargs):
         product = get_object_or_404(Product,
                                     id=kwargs['id'],
