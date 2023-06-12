@@ -145,6 +145,29 @@ ul.errorlist {
     padding-top:4px;
 }
 
+#subheader .cart a{
+    font-family: 'Ubuntu', sans-serif;
+    float:left;
+    color:#333;
+    font-size:25px;
+    margin-right:10%;
+    white-space: nowrap
+}
+
+#subheader .profile {
+    float:left;
+    padding-top:4px;
+}
+
+#subheader .profile a{
+    font-family: 'Ubuntu', sans-serif;
+    float:left;
+    color:#333;
+    font-size:25px;
+    margin-right:10%;
+    white-space: nowrap
+}
+
 #content {
     padding:0 100px;
     overflow:hidden;
@@ -208,6 +231,12 @@ ul.errorlist {
 .product-detail .price {
     color:#333;
     font-size:28px;
+    font-weight:bold;
+}
+
+.product-detail .amount {
+    color:#333;
+    font-size:20px;
     font-weight:bold;
 }
 
@@ -339,4 +368,8 @@ form div.field {
 
 .login-form {
     float: left;
+}
+
+.profile {
+    float:left;
 }

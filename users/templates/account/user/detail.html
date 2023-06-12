@@ -3,18 +3,26 @@
 {% block title %}{{ user.get_full_name }}{% endblock %}
 
 {% block content %}
-  <h1>Ваш профиль:</h1>
-  <h2><strong>Имя:</strong> {{ user.first_name }}</h2>
-  <h2><strong>Фамилия:</strong> {{ user.last_name }}</h2>
-  <h2><strong>Электронная почта:</strong> {{ user.email }}</h2>
-  <br>
-  <h3>Ваши заказы</h3>
-    <ul>
-      {% for order in users.orders %}
-        <li>
-          {{ order.id }}
-        </li>
-      {% endfor %}
-    </ul>
-  <a href="{% url "users:logout" %}">Выйти</a>.
+<h1>Ваш профиль:</h1>
+  <div class="profile">
+    <h2><strong>Имя:</strong> {{ user.first_name }}</h2>
+    <h2><strong>Фамилия:</strong> {{ user.last_name }}</h2>
+    <h2><strong>Электронная почта:</strong> {{ user.email }}</h2>
+    <br>
+    <p class="text-left"><a href="{% url "users:user_edit" %}" class="button">Редактировать</a>
+        <a href="{% url "users:logout" %}" class="button light">Выйти</a></p>
+    <br>
+  </div>
+
+  <div class="order-info">
+
+    <h3>Ваши заказы</h3>
+      <ul>
+        {% for order in orders %}
+          <li>
+            Заказ №{{ order.id }}
+          </li>
+        {% endfor %}
+      </ul>
+  </div>
 {% endblock %}

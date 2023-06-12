@@ -14,6 +14,8 @@ class CartAddView(View):
 
         if form.is_valid():
             cd = form.cleaned_data
+            if cd['quantity'] > product.quantity:
+                cd['quantity'] = product.quantity
             cart.add(product=product,
                      quantity=cd['quantity'],
                      override_quantity=cd['override'])

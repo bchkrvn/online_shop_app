@@ -8,10 +8,10 @@ from .models import Order
 def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = f'Заказ №{order_id}'
-    message = f'{order.first_name} {order.last_name} \n' \
+    message = f'{order.user.first_name} {order.user.last_name} \n' \
               f'Вы успешно оформили заказ в магазине Семерочка. \n' \
               f'Номер вашего заказа - {order_id}.\n' \
-              f'Адрес доставки: {order.postal_code}, {order.city}, {order.address}\n\n' \
+              f'Адрес доставки: {order.postal_code}, г. {order.city}, {order.address}\n\n' \
               f'Ваш заказ:\n'
 
     for i, item in enumerate(order.items.all(), 1):
@@ -19,5 +19,5 @@ def order_created(order_id):
 
     message += f"\nОбщая стоимость - {order.get_total_cost()} ₽"
 
-    mail_sent = send_mail(subject, message, settings.EMAIL_HOST_USER, [order.email])
+    mail_sent = send_mail(subject, message, settings.EMAIL_HOST_USER, [order.user.email])
     return mail_sent

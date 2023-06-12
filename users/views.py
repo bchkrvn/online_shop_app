@@ -24,7 +24,9 @@ class RegisterView(View):
 
 class UserView(View):
     def get(self, request):
-        return render(request, 'account/user/detail.html', {'user': request.user})
+        user = request.user
+        return render(request, 'account/user/detail.html', {'user': user,
+                                                            'orders': user.orders.all()})
 
 
 class UserEditView(View):

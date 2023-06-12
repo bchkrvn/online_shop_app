@@ -5,7 +5,7 @@ from users.models import User
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE, null=True, blank=True)
     address = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=20)
     city = models.CharField(max_length=100)

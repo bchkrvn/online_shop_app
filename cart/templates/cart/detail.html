@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+  {% if cart%}
   <h1>Ваша корзина</h1>
   <table class="cart">
     <thead>
@@ -60,4 +61,12 @@
     light">Продолжить покупки</a>
     <a href="{% url "orders:order_create" %}" class="button">Заказать</a>
   </p>
+  {% else %}
+   <h1>Ваша корзина пуста</h1>
+  <br>
+    <p class="text-left">
+        <a href="{% url "shop:product_list" %}" class="button
+        light">Продолжить покупки</a>
+    </p>
+  {% endif %}
 {% endblock %}
