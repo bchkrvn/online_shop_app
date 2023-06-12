@@ -1,9 +1,10 @@
 {% extends "shop/base.html" %}
+{% load static %}
 
 {% block title %}{{ user.get_full_name }}{% endblock %}
 
 {% block content %}
-  <div class="order_detail">
+  <div class="order_detail_info">
     <h1>Заказ №{{order.id}}</h1>
     <h2><strong>Покупатель:</strong></h2>
     <h3>{{ order.user.first_name }} {{ order.user.last_name }}</h3>
@@ -13,16 +14,43 @@
     <h3>{{ order.postal_code }}, г.{{ order.city }}, {{ order.address }}</h3>
     <h2><strong>Статус заказа:</strong></h2>
     <h3>{% if order.paid %}Оплачено{% else %}Не оплачено{% endif %}</h3>
-    <br>
+  </div>
+
+  <div class="order_detail_items">
     <h2>Состав заказа:</h2>
-    <ul>
-      {% for item in cart %}
-        <li>
-          {{ item.quantity }} x {{ item.product.name }}
-          <span> - {{ item.total_price }} ₽</span>
-        </li>
-      {% endfor %}
-    </ul>
-    <h2>Общая стоимость: {{ cart.get_total_price }} ₽</h2>
+    <table class="cart">
+        <thead>
+          <tr>
+            <th>Изображение</th>
+            <th>Товар</th>
+            <th>Количество</th>
+            <th>Цена за единицу</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            {% with product=item.product %}
+              <tr>
+                <td>
+                  <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}
+                    {% else %} {% static 'img/no_image.png' %} {% endif %}">
+                  </a>
+                </td>
+                <td>{{ product.name }}</td>
+                <td class="num">{{ item.quantity }} шт.</td>
+                <td class="num">{{ item.price }} ₽</td>
+                <td class="num">{{ item.get_cost }} ₽</td>
+              </tr>
+            {% endwith %}
+          {% endfor %}
+          <tr class="total">
+            <td>Общая сумма</td>
+            <td colspan="3"></td>
+            <td class="num">{{ order.get_total_cost }} ₽</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 {% endblock %}

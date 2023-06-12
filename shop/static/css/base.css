@@ -1,372 +1,380 @@
 @import url(//fonts.googleapis.com/css?family=Ubuntu);
 
 body {
-    margin:0;
-    padding:0;
-    font-family:helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
 }
 
 /* шрифт */
-h1, h2, h3, h4, h5 , h6 {
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
 }
 
 /* цвет ссылок */
 a {
-    text-decoration:none;
-    color:#5993bb;
+    text-decoration: none;
+    color: #5993bb;
 }
 
 /* цвет ссылок при наведении */
 a:hover {
-    color:#77b6e2;
+    color: #77b6e2;
 }
+
 /* кнопки отправить */
 a.button, input[type="submit"] {
-    color:#fff;
-    background:#5993bb;
-    border-radius:4px;
-    padding:10px 20px;
-    font-size:14px;
-    border:0;
+    color: #fff;
+    background: #5993bb;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 0;
 }
 
 a.button.light {
-    color:#666;
-    background:#ededed;
+    color: #666;
+    background: #ededed;
 }
 
 .text-left {
-    text-align:left;
+    text-align: left;
 }
 
 .text-right {
-    text-align:right;
+    text-align: right;
 }
 
 table {
-    width:100%;
-    border-spacing:0;
+    width: 100%;
+    border-spacing: 0;
     border-collapse: collapse;
 }
 
 table th, table td {
-    text-align:left;
-    font-size:14px;
-    padding:10px;
-    margin:0;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0;
 }
 
 tbody tr:nth-child(odd) {
-    background:#efefef;
+    background: #efefef;
 }
 
 tbody tr.subtotal {
-    background:#ccc;
+    background: #ccc;
 }
 
 thead th, tbody tr.total {
-    background:#5993bb;
-    color:#fff;
-    font-weight:bold;
+    background: #5993bb;
+    color: #fff;
+    font-weight: bold;
 }
 
 table.cart {
-    margin-bottom:40px;
+    margin-bottom: 20px;
 }
 
 table.cart img {
-    width:180px;
+    width: 180px;
 }
 
 tbody td.num {
-    text-align:left;
+    text-align: center;
+    font-size: 20px;
+}
+
+tbody td {
+    font-size: 18px;
 }
 
 td input[type="submit"] {
-    font-size:12px;
-    padding:4px 10px;
+    font-size: 15px;
+    padding: 4px 10px;
 }
 
 form p label, form p input {
-    float:left;
-    clear:both;
+    float: left;
+    clear: both;
 }
 
 form p label {
-    font-size:14px;
-    padding-bottom:4px;
+    font-size: 14px;
+    padding-bottom: 4px;
 }
 
 form p input {
-    width:300px;
-    font-size:13px;
-    margin-bottom:10px;
-    padding:10px 12px;
-    border:0;
-    background:#efefef;
-    color:#666;
-    border-radius:4px;
+    width: 300px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 0;
+    background: #efefef;
+    color: #666;
+    border-radius: 4px;
 }
 
 ul.errorlist {
-   float:left;
-   color:#ff0000;
-   clear:both;
-   font-size:13px;
-   margin:0 0 0 10px;
-   padding:10px 0;
+    float: left;
+    color: #ff0000;
+    clear: both;
+    font-size: 13px;
+    margin: 0 0 0 10px;
+    padding: 10px 0;
 }
 
 
 #header {
-    padding:10px 100px;
-    font-size:18px;
-    overflow:auto;
+    padding: 10px 100px;
+    font-size: 18px;
+    overflow: auto;
 }
 
 #subheader {
-    background:#ececec;
-    color:#444;
-    padding:15px 100px;
-    overflow:auto;
+    background: #ececec;
+    color: #444;
+    padding: 15px 100px;
+    overflow: auto;
 }
 
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
-    float:left;
-    color:#333;
-    font-size:22px;
-    margin-right:10%;
+    float: left;
+    color: #333;
+    font-size: 30px;
+    margin-right: 10%;
 }
 
 #subheader .cart {
-    float:right;
-    padding-top:4px;
+    float: right;
+    padding-top: 4px;
 }
 
-#subheader .cart a{
+#subheader .cart a {
     font-family: 'Ubuntu', sans-serif;
-    float:left;
-    color:#333;
-    font-size:25px;
-    margin-right:10%;
+    float: left;
+    color: #333;
+    font-size: 20px;
+    margin-right: 10%;
     white-space: nowrap
 }
 
 #subheader .profile {
-    float:left;
-    padding-top:4px;
+    float: left;
+    padding-top: 4px;
 }
 
-#subheader .profile a{
+#subheader .profile a {
     font-family: 'Ubuntu', sans-serif;
-    float:left;
-    color:#333;
-    font-size:25px;
-    margin-right:10%;
+    float: left;
+    color: #333;
+    font-size: 22px;
+    margin-right: 10%;
     white-space: nowrap
 }
 
 #content {
-    padding:0 100px;
-    overflow:hidden;
+    padding: 0 100px;
+    overflow: hidden;
 }
 
 #sidebar {
-    width:220px;
-    padding:30px 20px 0 0;
-    float:left;
+    width: 220px;
+    padding: 30px 20px 0 0;
+    float: left;
 }
 
-#sidebar ul{
-    margin:0;
-    padding:0;
+#sidebar ul {
+    margin: 0;
+    padding: 0;
 }
 
 #sidebar ul li {
-    margin:0;
-    list-style:none;
-    padding:10px 14px;
+    margin: 0;
+    list-style: none;
+    padding: 10px 14px;
 }
 
 #sidebar ul li a {
-    display:block;
+    display: block;
 }
 
 /* цвет выбранной категории ссылок */
 #sidebar ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
+    background: #5993bb;
+    border-radius: 4px;
 }
 
 #sidebar ul li.selected a {
-    color:#fff;
+    color: #fff;
 }
 
 #main {
-    float:left;
+    float: left;
     width: 96%;
-    margin-right:-220px;
-    overflow:hidden;
+    margin-right: -220px;
+    overflow: hidden;
 }
 
 .product-list .item {
-    width:20%;
-    padding:10px 20px 10px 0;
-    float:left;
-    text-align:center;
-    line-height:1.5;
+    width: 20%;
+    padding: 10px 20px 10px 0;
+    float: left;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .product-list .item img {
-    width:100%;
-    margin-bottom:8px;
+    width: 100%;
+    margin-bottom: 8px;
 }
 
 .product-detail {
-    text-align:justify;
+    text-align: justify;
 }
 
 .product-detail .price {
-    color:#333;
-    font-size:28px;
-    font-weight:bold;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .product-detail .amount {
-    color:#333;
-    font-size:20px;
-    font-weight:bold;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .product-detail img {
-    width:40%;
-    float:left;
-    padding:0 20px 20px 0;
+    width: 40%;
+    float: left;
+    padding: 0 20px 20px 0;
 }
 
 .product-detail h1 {
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 .product-detail h2 {
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 .order-form {
-    float:left;
+    float: left;
 }
+
 .order-form p {
-    width:50%;
+    width: 50%;
 }
 
 .order-info {
-    float:right;
-    width:500px;
-    background:#efefef;
-    padding:10px 20px;
-    color:#333;
-    border-bottom:4px solid #5993bb;
+    float: right;
+    width: 500px;
+    background: #efefef;
+    padding: 10px 20px;
+    color: #333;
+    border-bottom: 4px solid #5993bb;
 }
 
 .order-info h3 {
-    color:#5993bb;
+    color: #5993bb;
 }
 
 .order-info ul li {
-    margin:0;
-    padding:10px;
-    font-size:15px;
+    margin: 0;
+    padding: 10px;
+    font-size: 15px;
 }
 
 .order-info p {
-    font-weight:bold;
-    float:right;
+    font-weight: bold;
+    float: right;
 }
 
 .order-info span {
-    float:right;
+    float: right;
 }
 
-.order-info  a {
-    color:#333333;
+.order-info a {
+    color: #333333;
 }
 
 .neg {
-    color:#dc1616;
+    color: #dc1616;
 }
 
 .languages {
-   float:right;
-   padding-top:4px;
-   font-size:14px;
+    float: right;
+    padding-top: 4px;
+    font-size: 14px;
 }
 
 .languages ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-    float:left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
 }
 
 .languages ul li {
-    float:left;
-    margin:0 0 0 10px;
-    font-size:14px;
+    float: left;
+    margin: 0 0 0 10px;
+    font-size: 14px;
 }
 
 .languages p {
-    float:left;
-    margin:0;
+    float: left;
+    margin: 0;
 }
 
 .recommendations {
-    clear:both;
+    clear: both;
 }
 
 .recommendations div {
-    float:left;
+    float: left;
 }
 
 .recommendations img {
-    width:200px
+    width: 200px
 }
 
 .recommendations p {
-    clear:both;
+    clear: both;
 }
 
 .recommendations.cart {
-    width:60%;
-    float:left;
-    overflow:auto;
+    width: 60%;
+    float: left;
+    overflow: auto;
 }
 
 .recommendations.cart h3 {
-    margin-top:0;
+    margin-top: 0;
 }
 
 .recommendations.cart .item {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .recommendations.cart img {
-    width:120px;
+    width: 120px;
 }
 
 /* braintree hosted fields */
 form div.field {
-    font-size:13px;
-    color:#666;
-    width:200px;
-    height:22px;
-    margin-bottom:10px;
-    padding:6px 12px;
-    border:0;
-    background:#efefef;
-    color:#666;
-    border-radius:4px;
+    font-size: 13px;
+    color: #666;
+    width: 200px;
+    height: 22px;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border: 0;
+    background: #efefef;
+    color: #666;
+    border-radius: 4px;
 }
 
 
@@ -375,38 +383,41 @@ form div.field {
 }
 
 .profile {
-    float:left;
+    float: left;
 }
 
 .order-info-profile {
-    float:right;
-    width:350px;
-    background:#efefef;
-    padding:10px 20px;
-    color:#333;
-    border-bottom:4px solid #5993bb;
+    float: right;
+    width: 350px;
+    background: #efefef;
+    padding: 10px 20px;
+    color: #333;
+    border-bottom: 4px solid #5993bb;
 }
 
-.order_detail {
-    float:left;
+.order_detail_info {
+    float: left;
+    width: 25%;
 }
 
-.order_detail h2{
-    font-size:25px;
-
+.order_detail_items {
+    float: right;
+    width: 70%;
 }
-.order_detail h1{
-    font-size:35px;
+
+.order_detail_info h2 {
+    font-size: 25px;
+}
+.order_detail_items h2 {
+    font-size: 30px;
+}
+
+.order_detail_info h1 {
+    font-size: 35px;
     text-decoration: underline
 }
 
-.order_detail h3{
-    font-size:20px;
-    color:#222222;
-}
-
-.order_detail ul li {
-    margin:0;
-    padding:0;
-    font-size:20px;
+.order_detail_info h3 {
+    font-size: 20px;
+    color: #222222;
 }
