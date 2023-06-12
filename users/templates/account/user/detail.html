@@ -14,13 +14,13 @@
     <br>
   </div>
 
-  <div class="order-info">
+  <div class="order-info-profile">
 
     <h3>Ваши заказы</h3>
       <ul>
         {% for order in orders %}
           <li>
-            Заказ №{{ order.id }}
+            <a href="{{ order.get_absolute_url }}">Заказ №{{ order.id }}</a>
           </li>
         {% endfor %}
       </ul>

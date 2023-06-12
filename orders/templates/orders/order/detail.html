@@ -1,0 +1,28 @@
+{% extends "shop/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+  <div class="order_detail">
+    <h1>Заказ №{{order.id}}</h1>
+    <h2><strong>Покупатель:</strong></h2>
+    <h3>{{ order.user.first_name }} {{ order.user.last_name }}</h3>
+    <h2><strong>Электронная почта:</strong> </h2>
+    <h3>{{ order.user.email }}</h3>
+    <h2><strong>Адрес доставки:</strong></h2>
+    <h3>{{ order.postal_code }}, г.{{ order.city }}, {{ order.address }}</h3>
+    <h2><strong>Статус заказа:</strong></h2>
+    <h3>{% if order.paid %}Оплачено{% else %}Не оплачено{% endif %}</h3>
+    <br>
+    <h2>Состав заказа:</h2>
+    <ul>
+      {% for item in cart %}
+        <li>
+          {{ item.quantity }} x {{ item.product.name }}
+          <span> - {{ item.total_price }} ₽</span>
+        </li>
+      {% endfor %}
+    </ul>
+    <h2>Общая стоимость: {{ cart.get_total_price }} ₽</h2>
+  </div>
+{% endblock %}

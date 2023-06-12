@@ -263,7 +263,7 @@ ul.errorlist {
 
 .order-info {
     float:right;
-    width:300px;
+    width:500px;
     background:#efefef;
     padding:10px 20px;
     color:#333;
@@ -276,8 +276,8 @@ ul.errorlist {
 
 .order-info ul li {
     margin:0;
-    padding:0;
-    font-size:14px;
+    padding:10px;
+    font-size:15px;
 }
 
 .order-info p {
@@ -287,6 +287,10 @@ ul.errorlist {
 
 .order-info span {
     float:right;
+}
+
+.order-info  a {
+    color:#333333;
 }
 
 .neg {
@@ -372,4 +376,37 @@ form div.field {
 
 .profile {
     float:left;
+}
+
+.order-info-profile {
+    float:right;
+    width:350px;
+    background:#efefef;
+    padding:10px 20px;
+    color:#333;
+    border-bottom:4px solid #5993bb;
+}
+
+.order_detail {
+    float:left;
+}
+
+.order_detail h2{
+    font-size:25px;
+
+}
+.order_detail h1{
+    font-size:35px;
+    text-decoration: underline
+}
+
+.order_detail h3{
+    font-size:20px;
+    color:#222222;
+}
+
+.order_detail ul li {
+    margin:0;
+    padding:0;
+    font-size:20px;
 }
