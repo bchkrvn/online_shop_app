@@ -15,27 +15,30 @@ h1, h2, h3, h4, h5, h6 {
 /* цвет ссылок */
 a {
     text-decoration: none;
-    color: #5993bb;
+    color: #383838;
+    font-weight: bold;
 }
 
 /* цвет ссылок при наведении */
 a:hover {
-    color: #77b6e2;
+    color: #717171;
 }
 
 /* кнопки отправить */
 a.button, input[type="submit"] {
     color: #fff;
-    background: #5993bb;
+    background: #A4A7B7;
     border-radius: 4px;
     padding: 10px 20px;
     font-size: 14px;
     border: 0;
+    font-weight: bold;
 }
 
 a.button.light {
     color: #666;
     background: #ededed;
+    font-weight: normal;
 }
 
 .text-left {
@@ -68,7 +71,7 @@ tbody tr.subtotal {
 }
 
 thead th, tbody tr.total {
-    background: #5993bb;
+    background: #7D818C;
     color: #fff;
     font-weight: bold;
 }
@@ -78,7 +81,7 @@ table.cart {
 }
 
 table.cart img {
-    width: 180px;
+    width: 100px;
 }
 
 tbody td.num {
@@ -130,21 +133,22 @@ ul.errorlist {
     padding: 10px 100px;
     font-size: 18px;
     overflow: auto;
+    text-align: center;
 }
 
 #subheader {
-    background: #ececec;
+    background: #A8E4A0;
     color: #444;
-    padding: 15px 100px;
+    padding: 12px 100px;
     overflow: auto;
+
 }
 
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
-    float: left;
+    text-decoration: none;
     color: #333;
     font-size: 30px;
-    margin-right: 10%;
 }
 
 #subheader .cart {
@@ -156,14 +160,15 @@ ul.errorlist {
     font-family: 'Ubuntu', sans-serif;
     float: left;
     color: #333;
-    font-size: 20px;
+    font-size: 22px;
     margin-right: 10%;
     white-space: nowrap
 }
 
 #subheader .profile {
     float: left;
-    padding-top: 4px;
+    padding-top: 5px;
+
 }
 
 #subheader .profile a {
@@ -182,7 +187,7 @@ ul.errorlist {
 
 #sidebar {
     width: 220px;
-    padding: 30px 20px 0 0;
+    padding: 0 20px 0 0;
     float: left;
 }
 
@@ -203,7 +208,7 @@ ul.errorlist {
 
 /* цвет выбранной категории ссылок */
 #sidebar ul li.selected {
-    background: #5993bb;
+    background: #A4A7B7;
     border-radius: 4px;
 }
 
@@ -392,10 +397,10 @@ form div.field {
     background: #efefef;
     padding: 10px 20px;
     color: #333;
-    border-bottom: 4px solid #5993bb;
 }
 
 .order_detail_info {
+    padding: 0 20px 0 0;
     float: left;
     width: 25%;
 }
