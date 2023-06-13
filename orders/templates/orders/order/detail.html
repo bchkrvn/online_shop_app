@@ -4,6 +4,7 @@
 {% block title %}Заказ №{{order.id}}{% endblock %}
 
 {% block content %}
+{% if request.user == order.user or request.user.is_staff %}
   <div class="order_detail_info">
     <h1>Заказ №{{order.id}}</h1>
     <h2>Покупатель:</h2>
@@ -55,4 +56,11 @@
         </tbody>
       </table>
   </div>
+
+{% else %}
+<div class="order_detail_info">
+    <h1>У Вас нет доступа к этому заказу!</h1>
+</div>
+
+{% endif %}
 {% endblock %}

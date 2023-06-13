@@ -3,30 +3,34 @@
 {% block title %}Log-in{% endblock %}
 
 {% block content %}
-  <h1>Log-in</h1>
+  <h1>Войти</h1>
   {% if form.errors %}
     <p>
-      Your username and password didn't match.
-      Please try again.
+      Ваше имя пользователя или почта и пароль не совпадают.
+      Пожалуйста, попробуйте еще раз
     </p>
   {% else %}
     <p>
-      Please, use the following form to log-in.
-      If you don't have an account <a href="{% url "users:register" %}">register here</a>.
+      Пожалуйста, используйте следующую форму, чтобы войти.
+    </p>
+    <p>
+      Если у Вас нет аккаунта, Вы можете <a href="{% url "users:register" %}">зарегистрироваться здесь</a>.
     </p>
   {% endif %}
-<p>
-      <a href="{% url "users:password_reset" %}">
-        Forgotten your password?
+  <p>
+      <a href="{% url "password_reset" %}">
+        Забыли свой пароль?
       </a>
   </p>
+
   <div class="login-form">
-    <form action="{% url 'users:login' %}" method="post">
+    <form action="{% url 'login' %}" method="post">
       {{ form.as_p }}
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ next }}" />
-      <p><input type="submit" value="Log-in"></p>
+      <p><input type="submit" value="Войти"></p>
     </form>
   </div>
+
 
 {% endblock %}

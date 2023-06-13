@@ -80,6 +80,10 @@ table.cart {
     margin-bottom: 20px;
 }
 
+table.cart input[type="submit"] {
+    width: 100px;
+}
+
 table.cart img {
     width: 100px;
 }

@@ -11,6 +11,7 @@
     <a href="/" class="logo"><img src="{% static "img/semerochka.png" %}" height='30px' width='30px'> Семерочка</a>
 </div>
 <div id="subheader">
+    {%if request.user.is_authenticated%}
     <div class="cart">
         {% with total_items=cart|length %}
         {% if total_items > 0 %}
@@ -40,6 +41,7 @@
     <div class="products-subheader">
         <a href="{% url "shop:product_list" %}">Товары</a>
     </div>
+    {%endif%}
 </div>
 <div id="content">
     {% block content %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
 
@@ -38,7 +39,6 @@ class OrderCreateView(View):
 
 
 class OrderDetailView(View):
-
     def get(self, request, order_id, *args, **kwargs):
         order = get_object_or_404(Order, id=order_id)
         items = OrderItem.objects.filter(order=order)
