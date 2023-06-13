@@ -37,6 +37,9 @@
     <div class="profile">
         <a href="{% url "users:user_detail" %}">Мой профиль</a>
     </div>
+    <div class="products-subheader">
+        <a href="{% url "shop:product_list" %}">Товары</a>
+    </div>
 </div>
 <div id="content">
     {% block content %}

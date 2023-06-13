@@ -31,6 +31,9 @@ class Order(models.Model):
     def get_absolute_url(self):
         return reverse('orders:order_detail', args=[self.pk])
 
+    def get_created_date(self):
+        return self.created.strftime("%d.%m.%Y")
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order,

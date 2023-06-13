@@ -101,22 +101,26 @@ td input[type="submit"] {
 form p label, form p input {
     float: left;
     clear: both;
+
 }
 
 form p label {
-    font-size: 14px;
-    padding-bottom: 4px;
+    font-size: 15px;
+    padding-bottom: 10px;
 }
 
 form p input {
     width: 300px;
     font-size: 13px;
     margin-bottom: 10px;
-    padding: 10px 12px;
+    padding: 10px 10px;
     border: 0;
     background: #efefef;
     color: #666;
     border-radius: 4px;
+}
+form input[type="submit"] {
+    width: 320px;
 }
 
 ul.errorlist {
@@ -141,7 +145,6 @@ ul.errorlist {
     color: #444;
     padding: 12px 100px;
     overflow: auto;
-
 }
 
 #header .logo {
@@ -156,7 +159,7 @@ ul.errorlist {
     padding-top: 4px;
 }
 
-#subheader .cart a {
+#subheader a {
     font-family: 'Ubuntu', sans-serif;
     float: left;
     color: #333;
@@ -168,7 +171,11 @@ ul.errorlist {
 #subheader .profile {
     float: left;
     padding-top: 5px;
-
+}
+#subheader .products-subheader {
+    float: left;
+    padding-top: 5px;
+    padding-left: 15px;
 }
 
 #subheader .profile a {
@@ -272,28 +279,36 @@ ul.errorlist {
 
 .order-form p {
     width: 50%;
+    font-size: 30px;
+    font-weight: bold;
 }
 
+
+/* Оформление заказа */
 .order-info {
     float: right;
-    width: 500px;
+    width: 40%;
     background: #efefef;
     padding: 10px 20px;
     color: #333;
-    border-bottom: 4px solid #5993bb;
+    border-bottom: 4px solid #A4A7B7;
 }
 
 .order-info h3 {
-    color: #5993bb;
+    color: #222222;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .order-info ul li {
     margin: 0;
     padding: 10px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .order-info p {
+    font-size: 25px;
     font-weight: bold;
     float: right;
 }
@@ -387,42 +402,70 @@ form div.field {
     float: left;
 }
 
-.profile {
+.profile-info {
     float: left;
+}
+
+.profile-info h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+    padding: 0 0 15px 0;
 }
 
 .order-info-profile {
     float: right;
-    width: 350px;
+    width: 500px;
     background: #efefef;
-    padding: 10px 20px;
+    padding: 15px 20px;
     color: #333;
+    border-bottom: 4px solid #A4A7B7;
 }
 
+.order-info-profile h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.order-info-profile ul li {
+    margin: 0;
+    padding: 10px;
+    font-size: 19px;
+}
+
+.order-info-profile a{
+    font-weight: normal;
+}
+
+
+/* Детальная информация о заказе */
 .order_detail_info {
     padding: 0 20px 0 0;
     float: left;
     width: 25%;
 }
-
-.order_detail_items {
-    float: right;
-    width: 70%;
-}
-
 .order_detail_info h2 {
-    font-size: 25px;
+    font-size: 22px;
+    font-weight: bold;
 }
-.order_detail_items h2 {
-    font-size: 30px;
-}
-
 .order_detail_info h1 {
     font-size: 35px;
     text-decoration: underline
 }
-
 .order_detail_info h3 {
-    font-size: 20px;
+    font-size: 18px;
     color: #222222;
+    padding: 0 0 15px 0;
+}
+
+/* Состав заказа */
+.order_detail_items {
+    float: right;
+    width: 70%;
+}
+.order_detail_items h2 {
+    font-size: 30px;
 }

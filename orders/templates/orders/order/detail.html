@@ -6,13 +6,15 @@
 {% block content %}
   <div class="order_detail_info">
     <h1>Заказ №{{order.id}}</h1>
-    <h2><strong>Покупатель:</strong></h2>
+    <h2>Покупатель:</h2>
     <h3>{{ order.user.first_name }} {{ order.user.last_name }}</h3>
-    <h2><strong>Электронная почта:</strong> </h2>
+    <h2>Электронная почта:</h2>
     <h3>{{ order.user.email }}</h3>
-    <h2><strong>Адрес доставки:</strong></h2>
+    <h2>Адрес доставки:</h2>
     <h3>{{ order.postal_code }}, г.{{ order.city }}, {{ order.address }}</h3>
-    <h2><strong>Статус заказа:</strong></h2>
+    <h2>Дата заказа:</h2>
+    <h3>{{ order.get_created_date }}</h3>
+    <h2>Статус заказа:</h2>
     <h3>{% if order.paid %}Оплачено{% else %}Не оплачено{% endif %}</h3>
   </div>
 
