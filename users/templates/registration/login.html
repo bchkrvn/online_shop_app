@@ -18,13 +18,13 @@
     </p>
   {% endif %}
   <p>
-      <a href="{% url "password_reset" %}">
+      <a href="{% url "users:password_reset" %}">
         Забыли свой пароль?
       </a>
   </p>
 
   <div class="login-form">
-    <form action="{% url 'login' %}" method="post">
+    <form action="{% url 'users:login' %}" method="post">
       {{ form.as_p }}
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ next }}" />
