@@ -149,8 +149,8 @@ SITE_NAME = "Семерочка"
 AUTH_USER_MODEL = 'users.User'
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'login/'
-LOGOUT_URL = 'logout/'
+LOGIN_URL = 'users/login/'
+LOGOUT_URL = 'users/login/'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

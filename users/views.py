@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib import messages
 
@@ -39,7 +39,7 @@ class UserEditView(View):
         else:
             messages.error(request, 'Error updating your profile')
 
-        return render(request, 'account/edit.html', {'user_form': user_form})
+        return redirect('users:user_detail')
 
     def get(self, request):
         user_form = UserEditForm(instance=request.user)
