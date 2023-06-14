@@ -407,7 +407,9 @@ form div.field {
 }
 
 .profile-info {
+    padding: 0 20px 0 0;
     float: left;
+    width: 25%;
 }
 
 .profile-info h2 {
@@ -417,14 +419,14 @@ form div.field {
 
 .profile-info h3 {
     font-size: 20px;
-    padding: 0 0 15px 0;
+    padding: 0 0 5px 0;
 }
 
 .order-info-profile {
     float: right;
     width: 500px;
     background: #efefef;
-    padding: 15px 20px;
+    padding: 15px 20px 20px;
     color: #333;
     border-bottom: 4px solid #A4A7B7;
 }
@@ -452,7 +454,7 @@ form div.field {
     width: 25%;
 }
 .order_detail_info h2 {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: bold;
 }
 .order_detail_info h1 {

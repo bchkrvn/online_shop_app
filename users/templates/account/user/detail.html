@@ -3,21 +3,21 @@
 {% block title %}{{ user.get_full_name }}{% endblock %}
 
 {% block content %}
-<h1>Ваш профиль:</h1>
   <div class="profile-info">
+    <h1>Ваш профиль:</h1>
     <h2>Имя:</h2>
     <h3>{{ user.first_name }}</h3>
     <h2>Фамилия:</h2>
     <h3>{{ user.last_name }}</h3>
     <h2>Электронная почта:</h2>
     <h3>{{ user.email }}</h3>
-    <br>
     <p class="text-left"><a href="{% url "users:user_edit" %}" class="button">Редактировать</a>
         <a href="{% url "users:password_change" %}" class="button">Сменить пароль</a></p>
     <br>
     <p class="text-left"><a href="{% url "users:logout" %}" class="button light">Выйти</a></p>
   </div>
-
+  <br>
+  <br>
   <div class="order-info-profile">
     <h2>Ваши заказы:</h2>
       <ul>
