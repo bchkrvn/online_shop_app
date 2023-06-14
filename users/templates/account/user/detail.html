@@ -26,6 +26,8 @@
             <a href="{{ order.get_absolute_url }}">Заказ №{{ order.id }} от {{order.get_created_date}}
             на сумму {{ order.get_total_cost }} &#8381</a>
           </li>
+        {% empty %}
+        <h3>Вы еще не сделали ни одного заказа</h3>
         {% endfor %}
       </ul>
   </div>

@@ -28,7 +28,7 @@ class OrderCreateView(View):
                 product.save()
             cart.clear()
             order_created.delay(order.id)
-            return render(request, 'orders/order/created.html', {'order': order})
+            return render(request, 'orders/order/created.html', {'new_order': order})
 
         return render(request, 'orders/order/create.html', {'cart': cart, "form": form})
 

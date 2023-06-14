@@ -1,10 +1,10 @@
 {% extends "shop/base.html" %}
-{% block title %}Welcome{% endblock %}
+{% block title %}Добро пожаловать!{% endblock %}
 
 {% block content %}
-    <h1>Welcome {{ new_user.first_name }}!</h1>
+    <h1>Добро пожаловать в Семерочку, {{ new_user.first_name }}!</h1>
     <p>
-        Your account has been successfully created!
-        Now you can <a href="{% url "users:login" %}">log in</a>.
+        Ваш аккаунт был создан
+        Вы можете <a href="{% url "users:login" %}">войти в систему</a>.
     </p>
 {% endblock %}

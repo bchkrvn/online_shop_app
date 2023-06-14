@@ -16,7 +16,7 @@
         {% with total_items=cart|length %}
         {% if total_items > 0 %}
         <a href="{% url "cart:cart_detail" %}">
-        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>
+<!--        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>-->
         Ваша корзина:
         {{ total_items }}
         {% if total_items == 1 %}
@@ -28,9 +28,9 @@
         {% endif %}
         на {{ cart.get_total_price }} ₽
         </a>
-        {% elif not order %}
+        {% elif not new_order %}
         <a href="{% url "cart:cart_detail" %}">
-        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>
+<!--        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>-->
         Ваша корзина пуста</a>
         {% endif %}
         {% endwith %}
