@@ -14,7 +14,10 @@
     <p class="text-left"><a href="{% url "users:user_edit" %}" class="button">Редактировать</a>
         <a href="{% url "users:password_change" %}" class="button">Сменить пароль</a></p>
     <br>
-    <p class="text-left"><a href="{% url "users:logout" %}" class="button light">Выйти</a></p>
+    <p class="text-left">
+      <a href="{% url "users:user_delete" %}" class="button light">Удалить аккаунт</a>
+      <a href="{% url "users:logout" %}" class="button light">Выйти</a>
+    </p>
   </div>
   <br>
   <br>

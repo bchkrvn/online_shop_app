@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from django.contrib import messages
 
-from users.forms import UserRegistrationForm, UserEditForm
+from users.forms import UserRegistrationForm, UserEditForm, UserDeleteForm
 
 
 class RegisterView(View):
@@ -43,3 +42,20 @@ class UserEditView(View):
         user_form = UserEditForm(instance=request.user)
 
         return render(request, 'account/edit.html', {'user_form': user_form})
+
+
+class UserDeleteView(View):
+    def post(self, request, *args, **kwargs):
+        delete_form = UserDeleteForm(user=request.user, data=request.POST)
+
+        if delete_form.is_valid():
+            request.user.is_active = False
+            request.user.save()
+            return redirect('users:logout')
+
+        return render(request, 'account/delete.html', {'delete_form': delete_form})
+
+    def get(self, request):
+        delete_form = UserDeleteForm(user=request.user)
+
+        return render(request, 'account/delete.html', {'delete_form': delete_form})

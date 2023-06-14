@@ -1,0 +1,12 @@
+{% extends "shop/base.html" %}
+{% block title %}Удаление аккаунта{% endblock %}
+
+{% block content %}
+  <h1>Удаление аккаунта</h1>
+  <p>Для того, чтобы подтвердить удаление аккаунта, введите Ваш пароль:</p>
+  <form method="post" enctype="multipart/form-data">
+    {{ delete_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Удалить аккаунт"></p>
+  </form>
+{% endblock %}
