@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from myshop import settings
+from .views import page_not_found_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,8 +26,11 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('users/', include('users.urls', namespace='users')),
     path('coupons/', include('coupons.urls', namespace='coupons')),
+    path('404/', page_not_found_view),
     path('', include('shop.urls', namespace='shop')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = "myshop.views.page_not_found_view"
