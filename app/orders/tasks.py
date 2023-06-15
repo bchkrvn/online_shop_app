@@ -19,8 +19,8 @@ def order_created(order_id):
 
     if order.coupon:
         message += f"\nОбщая стоимость - {order.get_total_cost_before_discount()} ₽\n" \
-                   f'Купон:"{order.coupon.code} - скидка {order.discount} %' \
-                   f'Окончательная стоимость - {order.get_total_cost()} ₽'
+                   f'Купон:"{order.coupon.code}" - скидка {order.discount} %\n' \
+                   f'\nОкончательная стоимость - {order.get_total_cost()} ₽'
     else:
         message += f"\nОбщая стоимость - {order.get_total_cost()} ₽"
 
