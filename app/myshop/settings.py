@@ -147,9 +147,9 @@ SITE_NAME = "Семерочка"
 
 AUTH_USER_MODEL = 'users.User'
 
-LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'users/login/'
-LOGOUT_URL = 'users/login/'
+LOGIN_REDIRECT_URL = 'shop:product_list'
+LOGIN_URL = 'users:login'
+LOGOUT_URL = 'users:logout'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
