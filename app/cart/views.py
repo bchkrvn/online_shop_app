@@ -4,6 +4,7 @@ from django.views.generic import View
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
 from shop.models import Product
+from coupons.forms import CouponApplyForm
 
 
 class CartAddView(View):
@@ -39,4 +40,6 @@ class CartDetailView(View):
                 'quantity': item['quantity'],
                 'override': True
             })
-        return render(request, 'cart/detail.html', {'cart': cart})
+        coupon_apply_form = CouponApplyForm()
+        return render(request, 'cart/detail.html', {'cart': cart,
+                                                    'coupon_apply_form': coupon_apply_form})

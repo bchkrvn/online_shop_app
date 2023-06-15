@@ -17,7 +17,12 @@ def order_created(order_id):
     for i, item in enumerate(order.items.all(), 1):
         message += f'{i}) {item.product} - {item.quantity} шт.\n'
 
-    message += f"\nОбщая стоимость - {order.get_total_cost()} ₽"
+    if order.coupon:
+        message += f"\nОбщая стоимость - {order.get_total_cost_before_discount()} ₽\n" \
+                   f'Купон:"{order.coupon.code} - скидка {order.discount} %' \
+                   f'Окончательная стоимость - {order.get_total_cost()} ₽'
+    else:
+        message += f"\nОбщая стоимость - {order.get_total_cost()} ₽"
 
     mail_sent = send_mail(subject, message, settings.EMAIL_HOST_USER, [order.user.email])
     return mail_sent

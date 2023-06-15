@@ -9,7 +9,7 @@ from coupons.models import Coupon
 class CouponApplyView(View):
     def post(self, request):
         now = timezone.now()
-        form = CouponApplyForm()
+        form = CouponApplyForm(request.POST)
         if form.is_valid():
             code = form.cleaned_data['code']
             try:

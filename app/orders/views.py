@@ -13,9 +13,13 @@ class OrderCreateView(View):
         cart = Cart(request)
         form = OrderCreateForm(request.POST)
         if form.is_valid():
-            order = form.save()
+            order = form.save(commit=False)
+            if cart.coupon:
+                order.coupon = cart.coupon
+                order.discount = cart.coupon.discount
             order.user = request.user
             order.save()
+
             for item in cart:
                 product = item['product']
                 OrderItem.objects.create(
@@ -27,7 +31,10 @@ class OrderCreateView(View):
                 product.quantity -= item['quantity']
                 product.save()
             cart.clear()
+            request.session['coupon_id'] = None
+
             order_created.delay(order.id)
+
             return render(request, 'orders/order/created.html', {'new_order': order})
 
         return render(request, 'orders/order/create.html', {'cart': cart, "form": form})
