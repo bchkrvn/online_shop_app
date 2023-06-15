@@ -475,3 +475,22 @@ form div.field {
 .order_detail_items h2 {
     font-size: 30px;
 }
+
+.coupon_form {
+    float: left;
+}
+
+
+.coupon_form p input {
+    width: 150px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border: 0;
+    background: #efefef;
+    color: #666;
+    border-radius: 4px;
+}
+.coupon_form input[type="submit"] {
+    width: 170px;
+}

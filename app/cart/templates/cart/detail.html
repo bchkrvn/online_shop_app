@@ -75,10 +75,9 @@
       </tr>
     </tbody>
   </table>
-  <p class="text-left">Введите купон:</p>
-  <form action="{% url "coupons:apply" %}" method="post">
-    {{ coupon_apply_form }}
-    <input type="submit" value="Применить">
+  <form action="{% url "coupons:apply" %}" method="post" class="coupon_form">
+    {{ coupon_apply_form.as_p }}
+    <input type="submit" width: 100px value="Применить">
     {% csrf_token %}
   </form>
   <p class="text-right">
