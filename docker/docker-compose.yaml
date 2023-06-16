@@ -5,10 +5,8 @@ services:
     image: postgres:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: shop
-      POSTGRES_PASSWORD: shop
-      POSTGRES_DB: shop
+    env_file:
+      - db.env
     restart: always
     ports:
       - "5432:5432"
@@ -25,9 +23,8 @@ services:
     image: rabbitmq:3.10.7-management
     hostname: rabbitmq
     restart: always
-    environment:
-      - RABBITMQ_DEFAULT_USER=shop
-      - RABBITMQ_DEFAULT_PASS=shop
+    env_file:
+      - rabbitmq.env
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -37,22 +34,8 @@ services:
   app:
     build:
       context: ../app
-    environment:
-      DB_NAME: shop
-      DB_USER: shop
-      DB_PASSWORD: shop
-      DB_HOST: db
-      DB_PORT: 5432
-      EMAIL_HOST: 'smtp.yandex.ru'
-      EMAIL_HOST_USER: 'sserver.nikita@yandex.ru'
-      EMAIL_HOST_PASSWORD: 'vpkbqrtzptfnhnbw'
-      EMAIL_PORT: 465
-      DEBUG: 1
-      CELERY_BROKER_URL: 'amqp://rabbitmq'
-      DJANGO_SETTINGS_MODULE: 'myshop.settings'
-      RABBITMQ_DEFAULT_USER: shop
-      RABBITMQ_DEFAULT_PASS: shop
-      SECRET_KEY: 'django-insecure-cd_#avp5&srafvq30@vw+j!b0n1*3d02l6l0)_sx1qo&^e&=bq'
+    env_file:
+      - app.env
     ports:
       - "80:80"
     command: bash -c "
