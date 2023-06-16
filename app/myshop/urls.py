@@ -26,7 +26,6 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('users/', include('users.urls', namespace='users')),
     path('coupons/', include('coupons.urls', namespace='coupons')),
-    path('404/', page_not_found_view),
     path('', include('shop.urls', namespace='shop')),
 ]
 
