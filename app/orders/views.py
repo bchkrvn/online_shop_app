@@ -5,6 +5,7 @@ from django.views.generic import View
 from cart.cart import Cart
 from orders.forms import OrderCreateForm
 from orders.models import OrderItem, Order
+from shop.recommender import Recommender
 from .tasks import order_created
 
 
@@ -30,10 +31,14 @@ class OrderCreateView(View):
                 )
                 product.quantity -= item['quantity']
                 product.save()
+
+            Recommender().products_bought([item['product'] for item in cart])
             cart.clear()
             request.session['coupon_id'] = None
 
             order_created.delay(order.id)
+
+
 
             return render(request, 'orders/order/created.html', {'new_order': order})
 

@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 
 from cart.forms import CartAddProductForm
 from shop.models import Product, Category
+from shop.recommender import Recommender
 
 
 class ProductsList(ListView):
@@ -30,7 +31,11 @@ class ProductDetail(DetailView):
                                     slug=kwargs['slug'],
                                     available=True)
         cart_product_form = CartAddProductForm()
+        recommender = Recommender()
+        recommended_products = recommender.submit_products_for([product], max_results=4)
+
         return render(request,
                       'shop/product/detail.html',
                       {'product': product,
-                       'cart_product_form': cart_product_form})
+                       'cart_product_form': cart_product_form,
+                       'recommended_products': recommended_products})

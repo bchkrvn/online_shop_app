@@ -4,6 +4,7 @@ from django.views.generic import View
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
 from shop.models import Product
+from shop.recommender import Recommender
 from coupons.forms import CouponApplyForm
 
 
@@ -35,12 +36,22 @@ class CartRemoveView(View):
 class CartDetailView(View):
     def get(self, request):
         cart = Cart(request)
+        cart_products = []
+
         for item in cart:
+            cart_products.append(item['product'])
             item['update_quantity_form'] = CartAddProductForm(initial={
                 'quantity': item['quantity'],
                 'override': True
             })
 
+        r = Recommender()
+        if cart_products:
+            recommended_products = r.submit_products_for(cart_products, max_results=4)
+        else:
+            recommended_products = []
+
         coupon_apply_form = CouponApplyForm()
         return render(request, 'cart/detail.html', {'cart': cart,
-                                                    'coupon_apply_form': coupon_apply_form})
+                                                    'coupon_apply_form': coupon_apply_form,
+                                                    'recommended_products': recommended_products})
