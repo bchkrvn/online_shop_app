@@ -47,7 +47,7 @@ class Order(models.Model):
     def get_discount(self):
         total_cost = self.get_total_cost_before_discount()
         if self.discount:
-            return total_cost * (self.discount / Decimal(100))
+            return Decimal(round(total_cost * (self.discount / Decimal(100)), 2))
         return Decimal(0)
 
     def get_absolute_url(self):
