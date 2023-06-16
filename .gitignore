@@ -5,5 +5,4 @@ env/
 .log
 .DS_Store
 media/
-.env
-docker/*.env
+*.env
