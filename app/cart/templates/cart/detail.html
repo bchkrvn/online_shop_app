@@ -100,5 +100,11 @@
     <input type="submit" value="Применить">
     {% csrf_token %}
   </form>
+  {% else %}
+   <h1>Ваша корзина пуста</h1>
+  <br>
+    <p class="text-left">
+        <a href="{% url "shop:product_list" %}" class="button">Продолжить покупки</a>
+    </p>
   {% endif %}
 {% endblock %}
