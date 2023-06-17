@@ -3,6 +3,7 @@ from _decimal import Decimal
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 from coupons.models import Coupon
 from shop.models import Product
@@ -10,19 +11,20 @@ from users.models import User
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE, null=True, blank=True)
-    address = models.CharField(max_length=250)
-    postal_code = models.CharField(max_length=20)
-    city = models.CharField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    paid = models.BooleanField(default=False)
-    coupon = models.ForeignKey(Coupon,
+    user = models.ForeignKey(_('Заказчик'), User, related_name='orders', on_delete=models.CASCADE, null=True,
+                             blank=True)
+    address = models.CharField(_('Адрес'), max_length=250)
+    postal_code = models.CharField(_('Почтовый индекс'), max_length=20)
+    city = models.CharField(_('Город'), max_length=100)
+    created = models.DateTimeField(_('Создан'), auto_now_add=True)
+    updated = models.DateTimeField(_('Обновлен'), auto_now=True)
+    paid = models.BooleanField(_('Оплачен'), default=False)
+    coupon = models.ForeignKey(_('Промокод'), Coupon,
                                related_name='orders',
                                null=True,
                                blank=True,
                                on_delete=models.SET_NULL)
-    discount = models.IntegerField(default=0,
+    discount = models.IntegerField(_('Скидка'), default=0,
                                    validators=[MinValueValidator(0),
                                                MaxValueValidator(100)])
 
@@ -31,8 +33,8 @@ class Order(models.Model):
         indexes = [
             models.Index(fields=['-created'])
         ]
-        verbose_name = 'Заказ'
-        verbose_name_plural = 'Заказы'
+        verbose_name = _('Заказ')
+        verbose_name_plural = _('Заказы')
 
     def __str__(self):
         return f'Order {self.pk}'
@@ -58,15 +60,15 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order,
+    order = models.ForeignKey(_('Заказ'), Order,
                               related_name='items',
                               on_delete=models.CASCADE)
-    product = models.ForeignKey(Product,
+    product = models.ForeignKey(_('Товар'), Product,
                                 related_name='order_items',
                                 on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(_('Цена'), max_digits=10, decimal_places=2)
 
-    quantity = models.PositiveIntegerField(default=1)
+    quantity = models.PositiveIntegerField(_('Количество'), default=1)
 
     def __str__(self):
         return str(self.pk)
@@ -75,5 +77,5 @@ class OrderItem(models.Model):
         return self.price * self.quantity
 
     class Meta:
-        verbose_name = 'Позиция заказа'
-        verbose_name_plural = 'Позиции заказа'
+        verbose_name = _('Позиция заказа')
+        verbose_name_plural = _('Позиции заказа')

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-17 16:18+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: coupons/forms.py:6
+msgid "Введите купон:"
+msgstr "Enter coupon:"
+
+#: coupons/models.py:8
+msgid "Промокод"
+msgstr "Coupon"
+
+#: coupons/models.py:9
+msgid "Действителен от"
+msgstr "Valid from"
+
+#: coupons/models.py:10
+msgid "Действителен до"
+msgstr "Valid to"
+
+#: coupons/models.py:11
+msgid "Скидка"
+msgstr "Discount"
+
+#: coupons/models.py:13
+msgid "Значение в процентах от 0 до 100"
+msgstr "Percent value from 0 to 100"
+
+#: coupons/models.py:14
+msgid "Активен"
+msgstr "Active"
+
+#: coupons/models.py:19
+msgid "Дата начала действия не может быть позже окончания"
+msgstr "Valid from cannot be later than valid to"
+
+#: coupons/models.py:26
+msgid "Купон"
+msgstr "Coupon"
+
+#: coupons/models.py:27
+msgid "Купоны"
+msgstr "Coupons"

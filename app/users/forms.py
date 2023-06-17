@@ -11,20 +11,20 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'username', 'birth_date', ]
-        labels = {
-            "first_name": "Имя",
-            "last_name": "Фамилия",
-            "email": "Электронная почта",
-            "birth_date": "Дата рождения (год-месяц-день)",
-            'username': 'Имя пользователя',
-        }
+        # labels = {
+        #     "first_name": "Имя",
+        #     "last_name": "Фамилия",
+        #     "email": "Электронная почта",
+        #     "birth_date": "Дата рождения (год-месяц-день)",
+        #     'username': 'Имя пользователя',
+        # }
 
     def clean_email(self):
         data = self.cleaned_data['email']
         qs = User.objects.exclude(id=self.instance.id) \
             .filter(email=data)
         if qs.exists():
-            raise forms.ValidationError('Этот адрес электронной почты уже используется')
+            raise forms.ValidationError(_('Этот адрес электронной почты уже используется'))
         return data
 
     def clean_username(self):
@@ -32,41 +32,41 @@ class UserEditForm(forms.ModelForm):
         qs = User.objects.exclude(id=self.instance.id) \
             .filter(username=data)
         if qs.exists():
-            raise forms.ValidationError('Имя пользователя занято')
+            raise forms.ValidationError(_('Имя пользователя занято'))
         return data
 
     def clean_birth_date(self):
         data = self.cleaned_data['birth_date']
         if data > datetime.date.today():
-            raise forms.ValidationError("Ваш день рождения не может быть в будущем")
+            raise forms.ValidationError(_("Ваш день рождения не может быть в будущем"))
         return data
 
 
 class UserRegistrationForm(UserEditForm):
-    password = forms.CharField(label='Пароль',
+    password = forms.CharField(label=_('Пароль'),
                                widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Повторите пароль',
+    password2 = forms.CharField(label=_('Повторите пароль'),
                                 widget=forms.PasswordInput)
 
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError("Passwords don't match.")
+            raise forms.ValidationError(_("Пароли не совпадают"))
         return cd['password2']
 
 
 class UserFormAdmin(forms.ModelForm):
-    password = forms.CharField(label='Password',
+    password = forms.CharField(label=_('Пароль'),
                                widget=forms.PasswordInput,
-                               help_text="Your password can't be too similar")
-    password2 = forms.CharField(label='Repeat password',
+                               help_text=_("Ваш пароль не может быть слишком простым"))
+    password2 = forms.CharField(label=_('Повторите пароль'),
                                 widget=forms.PasswordInput,
-                                help_text="Enter the same password as before, for verification")
+                                help_text=_("Введите тот же пароль, что и до этого"))
 
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError("Passwords don't match.")
+            raise forms.ValidationError(_("Пароли не совпадают"))
         return cd['password2']
 
     class Meta:
@@ -150,5 +150,5 @@ class UserDeleteForm(forms.Form):
     def clean_password(self):
         password = self.cleaned_data["password"]
         if not self.user.check_password(password):
-            raise forms.ValidationError("Неверный пароль")
+            raise forms.ValidationError(_("Неверный пароль"))
         return password

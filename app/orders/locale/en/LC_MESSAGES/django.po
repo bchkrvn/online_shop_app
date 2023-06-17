@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-17 16:18+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: orders/models.py:14
+msgid "Заказчик"
+msgstr "User"
+
+#: orders/models.py:16
+msgid "Адрес"
+msgstr "Address"
+
+#: orders/models.py:17
+msgid "Почтовый индекс"
+msgstr "Postal code"
+
+#: orders/models.py:18
+msgid "Город"
+msgstr "City"
+
+#: orders/models.py:19
+msgid "Создан"
+msgstr "Created"
+
+#: orders/models.py:20
+msgid "Обновлен"
+msgstr "Updated"
+
+#: orders/models.py:21
+msgid "Оплачен"
+msgstr "Paid"
+
+#: orders/models.py:22
+msgid "Промокод"
+msgstr "Coupon"
+
+#: orders/models.py:27
+msgid "Скидка"
+msgstr "Discount"
+
+#: orders/models.py:36 orders/models.py:63
+msgid "Заказ"
+msgstr "Order"
+
+#: orders/models.py:37
+msgid "Заказы"
+msgstr "Orders"
+
+#: orders/models.py:66
+msgid "Товар"
+msgstr "Product"
+
+#: orders/models.py:69
+msgid "Цена"
+msgstr "Price"
+
+#: orders/models.py:71
+msgid "Количество"
+msgstr "Quantity"
+
+#: orders/models.py:80
+msgid "Позиция заказа"
+msgstr "Order item"
+
+#: orders/models.py:81
+msgid "Позиции заказа"
+msgstr "Order items"
