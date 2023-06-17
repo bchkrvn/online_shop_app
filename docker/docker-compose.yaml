@@ -23,8 +23,6 @@ services:
     image: rabbitmq:3.10.7-management
     hostname: rabbitmq
     restart: always
-    env_file:
-      - rabbitmq.env
     ports:
       - "5672:5672"
       - "15672:15672"

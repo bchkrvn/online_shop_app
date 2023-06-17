@@ -157,9 +157,7 @@ AUTHENTICATION_BACKENDS = [
     'users.authentication.EmailAuthBackend',
 ]
 
-# RABITMQ and CELERY settings
-RABBITMQ_DEFAULT_USER = os.environ.get("RABBITMQ_DEFAULT_USER")
-RABBITMQ_DEFAULT_PASS = os.environ.get("RABBITMQ_DEFAULT_PASS")
+# CELERY settings
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL")
 
 # Redis settings
