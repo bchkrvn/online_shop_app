@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 16:18+0300\n"
+"POT-Creation-Date: 2023-06-17 18:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: orders/models.py:14
-msgid "Заказчик"
+
+#: orders/apps.py:8 orders/models.py:37
+msgid "Заказы"
 msgstr ""
 
 #: orders/models.py:16
@@ -47,24 +48,12 @@ msgstr ""
 msgid "Оплачен"
 msgstr ""
 
-#: orders/models.py:22
-msgid "Промокод"
-msgstr ""
-
 #: orders/models.py:27
 msgid "Скидка"
 msgstr ""
 
-#: orders/models.py:36 orders/models.py:63
+#: orders/models.py:36
 msgid "Заказ"
-msgstr ""
-
-#: orders/models.py:37
-msgid "Заказы"
-msgstr ""
-
-#: orders/models.py:66
-msgid "Товар"
 msgstr ""
 
 #: orders/models.py:69
@@ -81,4 +70,54 @@ msgstr ""
 
 #: orders/models.py:81
 msgid "Позиции заказа"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:5
+#: orders/templates/orders/order/create.html:9
+msgid "Оформление заказа"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:11
+msgid "Ваш заказ"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:21
+#: orders/templates/orders/order/detail.html:62
+msgid "скидка"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:26
+msgid "Всего"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:31
+msgid "Оформить заказ"
+msgstr ""
+
+#: orders/templates/orders/order/created.html:5
+msgid "Спасибо за заказ!"
+msgstr ""
+
+#: orders/templates/orders/order/created.html:10
+msgid "Ваш заказ был успешно оформлен. Номер Вашего заказа"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:20
+msgid "Оплачено"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:20
+msgid "Не оплачено"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:61
+msgid "Купон"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:72
+msgid "Общая сумма"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:82
+msgid "У Вас нет доступа к этому заказу"
 msgstr ""

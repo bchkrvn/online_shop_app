@@ -31,5 +31,6 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns.insert(0, path('rosetta/', include('rosetta.urls')))
 
 handler404 = "myshop.views.page_not_found_view"

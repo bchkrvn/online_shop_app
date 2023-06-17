@@ -1,10 +1,11 @@
 {% extends "shop/base.html" %}
-{% block title %}Страница не найдена{% endblock %}
+{% load i18n %}
+{% block title %}{$ trans 'Страница не найдена' %}{% endblock %}
 {% block content %}
-<h1>Страница не найдена</h1>
+<h1>{$ trans 'Страница не найдена' %}</h1>
 <p>
-    Извините, но запрашиваемая Вами страница не найдена
+    {$ trans 'Извините, но запрашиваемая Вами страница не найдена' %}
 </p>
 <br>
-<p><a href="{% url "shop:product_list" %}">Вернуться на главную страницу</a></p>
+<p><a href="{% url "shop:product_list" %}">{% trans 'Вернуться на главную страницу' %}</a></p>
 {% endblock %}

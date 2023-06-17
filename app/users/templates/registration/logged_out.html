@@ -1,11 +1,12 @@
 {% extends "shop/base.html" %}
-{% block title %}Выход{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Выход' %}{% endblock %}
 {% block content %}
-<h1>Вы вышли из профиля</h1>
+<h1>{% trans 'Вы вышли из профиля' %}</h1>
 <p>
-    Вы успешно вышли из профиля
+    {% trans 'Вы успешно вышли из профиля' %}
 </p>
 <p>
-    Вы можете <a href="{% url "users:login" %}">войти в профиль еще раз</a>.
+    {% trans 'Вы можете' %} <a href="{% url "users:login" %}">{% trans 'войти в профиль еще раз' %}</a>.
 </p>
 {% endblock %}

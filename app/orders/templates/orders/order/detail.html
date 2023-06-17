@@ -1,34 +1,35 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% load static %}
 
-{% block title %}Заказ №{{order.id}}{% endblock %}
+{% block title %}{$ trans 'Заказ' %} №{{order.id}}{% endblock %}
 
 {% block content %}
 {% if request.user == order.user or request.user.is_staff %}
   <div class="order_detail_info">
-    <h1>Заказ №{{order.id}}</h1>
-    <h2>Покупатель:</h2>
+    <h1>{$ trans 'Заказ' %} №{{order.id}}</h1>
+    <h2>{$ trans 'Покупатель' %}:</h2>
     <h3>{{ order.user.first_name }} {{ order.user.last_name }}</h3>
-    <h2>Электронная почта:</h2>
+    <h2>{$ trans 'Электронная почта' %}</h2>
     <h3>{{ order.user.email }}</h3>
-    <h2>Адрес доставки:</h2>
+    <h2>{$ trans 'Адрес доставки' %}</h2>
     <h3>{{ order.postal_code }}, г.{{ order.city }}, {{ order.address }}</h3>
-    <h2>Дата заказа:</h2>
+    <h2>{$ trans 'Дата заказа' %}</h2>
     <h3>{{ order.get_created_date }}</h3>
-    <h2>Статус заказа:</h2>
-    <h3>{% if order.paid %}Оплачено{% else %}Не оплачено{% endif %}</h3>
+    <h2>{$ trans 'Статус заказа' %}</h2>
+    <h3>{% if order.paid %}{%trans 'Оплачено' %}{% else %}{% trans 'Не оплачено' %}{% endif %}</h3>
   </div>
 
   <div class="order_detail_items">
-    <h2>Состав заказа:</h2>
+    <h2>{$ trans 'Состав заказа' %}</h2>
     <table class="cart">
         <thead>
           <tr>
-            <th>Изображение</th>
-            <th>Товар</th>
-            <th>Количество</th>
-            <th>Цена за единицу</th>
-            <th>Цена</th>
+            <th>{$ trans 'Изображение' %}</th>
+            <th>{$ trans 'Товар' %}</th>
+            <th>{$ trans 'Количество' %}</th>
+            <th>{$ trans 'Цена за единицу' %}</th>
+            <th>{$ trans 'Цена' %}</th>
           </tr>
         </thead>
         <tbody>
@@ -51,14 +52,14 @@
 
           {% if order.coupon %}
             <tr class="subtotal">
-              <td>Промежуточный итог</td>
+              <td>{$ trans 'Промежуточный итог' %}</td>
               <td colspan="3"></td>
               <td class="num">{{ order.get_total_cost_before_discount|floatformat:2 }} ₽</td>
             </tr>
             <tr>
               <td>
-                Купон "{{ order.coupon.code }}"
-                (скидка {{ order.discount }}%)
+                {% trans 'Купон' %} "{{ order.coupon.code }}"
+                ({% trans 'скидка' %} {{ order.discount }}%)
               </td>
               <td colspan="3"></td>
               <td class="num neg">
@@ -68,7 +69,7 @@
           {% endif %}
 
           <tr class="total">
-            <td>Общая сумма</td>
+            <td>{% trans 'Общая сумма' %}</td>
             <td colspan="3"></td>
             <td class="num">{{ order.get_total_cost|floatformat:2 }} ₽</td>
           </tr>
@@ -78,7 +79,7 @@
 
 {% else %}
 <div class="order_detail_info">
-    <h1>У Вас нет доступа к этому заказу!</h1>
+    <h1>{% trans 'У Вас нет доступа к этому заказу' %}!</h1>
 </div>
 
 {% endif %}

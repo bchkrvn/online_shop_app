@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 15:59+0300\n"
+"POT-Creation-Date: 2023-06-17 18:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: shop/apps.py:8
+msgid "Магазин"
+msgstr ""
+
 #: shop/models.py:7 shop/models.py:27
 msgid "Название"
 msgstr ""
@@ -27,11 +32,11 @@ msgstr ""
 msgid "Слаг"
 msgstr ""
 
-#: shop/models.py:15 shop/models.py:26
+#: shop/models.py:15
 msgid "Категория"
 msgstr ""
 
-#: shop/models.py:16
+#: shop/models.py:16 shop/templates/shop/product/list.html:11
 msgid "Категории"
 msgstr ""
 
@@ -67,6 +72,58 @@ msgstr ""
 msgid "Товар"
 msgstr ""
 
-#: shop/models.py:45
+#: shop/models.py:45 shop/templates/shop/base.html:41
+#: shop/templates/shop/product/list.html:6
+#: shop/templates/shop/product/list.html:24
 msgid "Товары"
+msgstr ""
+
+#: shop/templates/shop/404.html:10
+msgid "Вернуться на главную страницу"
+msgstr ""
+
+#: shop/templates/shop/base.html:7 shop/templates/shop/base.html:12
+msgid "Семерочка"
+msgstr ""
+
+#: shop/templates/shop/base.html:20
+msgid "Ваша корзина:"
+msgstr ""
+
+#: shop/templates/shop/base.html:23
+msgid "товар"
+msgstr ""
+
+#: shop/templates/shop/base.html:25
+msgid "товара"
+msgstr ""
+
+#: shop/templates/shop/base.html:27
+msgid "товаров"
+msgstr ""
+
+#: shop/templates/shop/base.html:29
+#, python-format
+msgid "на %(cart.get_total_price)s ₽"
+msgstr ""
+
+#: shop/templates/shop/base.html:33
+msgid "Ваша корзина пуста"
+msgstr ""
+
+#: shop/templates/shop/base.html:38
+msgid "Мой профиль"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:19
+#, python-format
+msgid "Осталось: %(product.quantity)s шт"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:23
+msgid "Добавить в корзину"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:28
+msgid "Рекомендуем Вам также посмотреть:"
 msgstr ""

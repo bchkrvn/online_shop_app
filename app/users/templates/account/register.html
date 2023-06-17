@@ -1,12 +1,13 @@
 {% extends "shop/base.html" %}
-{% block title %}Создать новый аккаунт{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Создать новый аккаунт' %}{% endblock %}
 
 {% block content %}
-    <h1>Создать новый аккаунт</h1>
-    <p>Пожалуйста, заполните следующую форму</p>
+    <h1>{% trans 'Создать новый аккаунт' %}</h1>
+    <p>{% trans 'Пожалуйста, заполните следующую форму' %}</p>
     <form method="post">
         {{ user_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Создать мой аккаунт"></p>
+        <p><input type="submit" value="{% trans 'Создать мой аккаунт' %}"></p>
     </form>
 {% endblock %}

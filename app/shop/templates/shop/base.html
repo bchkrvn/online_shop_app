@@ -1,14 +1,15 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>{% block title %}Семерочка{% endblock %}</title>
+    <title>{% block title %}{% trans "Семерочка" %}{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
 <div id="header">
-    <a href="/" class="logo"><img src="{% static "img/semerochka.png" %}" height='30px' width='30px'> Семерочка</a>
+    <a href="/" class="logo"><img src="{% static "img/semerochka.png" %}" height='30px' width='30px'> {% trans "Семерочка" %}</a>
 </div>
 <div id="subheader">
     {%if request.user.is_authenticated%}
@@ -16,30 +17,28 @@
         {% with total_items=cart|length %}
         {% if total_items > 0 %}
         <a href="{% url "cart:cart_detail" %}">
-<!--        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>-->
-        Ваша корзина:
+        {% trans "Ваша корзина:" %}
         {{ total_items }}
         {% if total_items == 1 %}
-        товар
+        {% trans "товар" %}
         {% elif total_items < 5 %}
-        товара
+        {% trans "товара" %}
         {% else %}
-        товаров
+        {% trans "товаров" %}
         {% endif %}
-        на {{ cart.get_total_price }} ₽
+        {% blocktrans %}на {{ cart.get_total_price }} ₽{% endblocktrans %}
         </a>
         {% elif not new_order %}
         <a href="{% url "cart:cart_detail" %}">
-<!--        <img src="{% static "img/cart.png" %}" height='25px' width='25px'>-->
-        Ваша корзина пуста</a>
+        {% trans "Ваша корзина пуста" %}</a>
         {% endif %}
         {% endwith %}
     </div>
     <div class="profile">
-        <a href="{% url "users:user_detail" %}">Мой профиль</a>
+        <a href="{% url "users:user_detail" %}">{% trans "Мой профиль" %}</a>
     </div>
     <div class="products-subheader">
-        <a href="{% url "shop:product_list" %}">Товары</a>
+        <a href="{% url "shop:product_list" %}">{% trans "Товары" %}</a>
     </div>
     {%endif%}
 </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 16:18+0300\n"
+"POT-Creation-Date: 2023-06-17 18:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: coupons/apps.py:8 coupons/models.py:27
+msgid "Купоны"
+msgstr "Coupons"
+
 #: coupons/forms.py:6
 msgid "Введите купон:"
 msgstr "Enter coupon:"
@@ -52,7 +57,3 @@ msgstr "Valid from cannot be later than valid to"
 #: coupons/models.py:26
 msgid "Купон"
 msgstr "Coupon"
-
-#: coupons/models.py:27
-msgid "Купоны"
-msgstr "Coupons"

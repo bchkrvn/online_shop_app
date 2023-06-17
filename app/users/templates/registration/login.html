@@ -1,25 +1,25 @@
 {% extends "shop/base.html" %}
-
-{% block title %}Log-in{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Войти' %}{% endblock %}
 
 {% block content %}
-  <h1>Войти</h1>
+  <h1>{% trans 'Войти' %}</h1>
   {% if form.errors %}
     <p>
-      Ваше имя пользователя или почта и пароль не совпадают.
-      Пожалуйста, попробуйте еще раз
+      {% trans 'Ваше имя пользователя или почта и пароль не совпадают.
+      Пожалуйста, попробуйте еще раз' %}
     </p>
   {% else %}
     <p>
-      Пожалуйста, используйте следующую форму, чтобы войти.
+      {% trans 'Пожалуйста, используйте следующую форму, чтобы войти.' %}
     </p>
     <p>
-      Если у Вас нет аккаунта, Вы можете <a href="{% url "users:register" %}">зарегистрироваться здесь</a>.
+      {% trans 'Если у Вас нет аккаунта, Вы можете' %} <a href="{% url "users:register" %}">{% trans 'зарегистрироваться здесь' %}</a>.
     </p>
   {% endif %}
   <p>
       <a href="{% url "users:password_reset" %}">
-        Забыли свой пароль?
+        {% trans 'Забыли свой пароль?' %}
       </a>
   </p>
 
@@ -28,7 +28,7 @@
       {{ form.as_p }}
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ next }}" />
-      <p><input type="submit" value="Войти"></p>
+      <p><input type="submit" value="{% trans 'Войти' %}"></p>
     </form>
   </div>
 

@@ -8,15 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 16:05+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-06-17 18:33+0300\n"
+"PO-Revision-Date: 2023-06-17 18:34+0300\n"
+"Last-Translator: Nikita Bochkarev <asderus@yandex.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: users/apps.py:8
+#| msgid "Имя пользователя"
+msgid "Пользователи"
+msgstr "Users"
 
 #: users/forms.py:27
 msgid "Этот адрес электронной почты уже используется"
@@ -93,3 +99,256 @@ msgstr "Birth date"
 #: users/models.py:16
 msgid "Имя пользователя"
 msgstr "Username"
+
+#: users/templates/account/delete.html:3 users/templates/account/delete.html:6
+msgid "Удаление аккаунта"
+msgstr "Account deleting"
+
+#: users/templates/account/delete.html:7
+msgid "Для того, чтобы подтвердить удаление аккаунта, введите Ваш пароль"
+msgstr "To confirm account deletion, enter your password"
+
+#: users/templates/account/delete.html:11
+#: users/templates/account/user/detail.html:19
+msgid "Удалить аккаунт"
+msgstr "Delete account"
+
+#: users/templates/account/edit.html:3
+msgid "Редактирование аккаунта"
+msgstr "Editing an account"
+
+#: users/templates/account/edit.html:6
+msgid "Редактирование вашего аккаунта"
+msgstr "Editing your account"
+
+#: users/templates/account/edit.html:7
+msgid "Вы можете изменить Ваш аккаунт используя форму"
+msgstr "You can change your account using the form"
+
+#: users/templates/account/edit.html:11
+msgid "Сохранить изменения"
+msgstr "Save changes"
+
+#: users/templates/account/register.html:3
+#: users/templates/account/register.html:6
+msgid "Создать новый аккаунт"
+msgstr "Create a new account"
+
+#: users/templates/account/register.html:7
+msgid "Пожалуйста, заполните следующую форму"
+msgstr "Please fill out the following form"
+
+#: users/templates/account/register.html:11
+msgid "Создать мой аккаунт"
+msgstr "Create my account"
+
+#: users/templates/account/register_done.html:3
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: users/templates/account/register_done.html:6
+msgid "Добро пожаловать в Семерочку"
+msgstr "Welcome to Semerochka"
+
+#: users/templates/account/register_done.html:8
+msgid "Ваш аккаунт был создан"
+msgstr "Your account has been created"
+
+#: users/templates/account/register_done.html:9
+#: users/templates/registration/logged_out.html:10
+#: users/templates/registration/password_reset_complete.html:8
+msgid "Вы можете"
+msgstr "You can"
+
+#: users/templates/account/register_done.html:9
+#: users/templates/registration/password_reset_complete.html:8
+msgid "войти в систему"
+msgstr "log-in"
+
+#: users/templates/account/user/detail.html:8
+msgid "Ваш профиль"
+msgstr "Your profile"
+
+#: users/templates/account/user/detail.html:9
+msgid "Имя"
+msgstr "First name"
+
+#: users/templates/account/user/detail.html:11
+msgid "Фамилия"
+msgstr "Last name"
+
+#: users/templates/account/user/detail.html:13
+msgid "Электронная почта"
+msgstr "E-mail"
+
+#: users/templates/account/user/detail.html:15
+msgid "Редактировать"
+msgstr "Edit"
+
+#: users/templates/account/user/detail.html:16
+msgid "Сменить пароль"
+msgstr "Change password"
+
+#: users/templates/account/user/detail.html:20
+msgid "Выйти"
+msgstr "Log-out"
+
+#: users/templates/account/user/detail.html:26
+msgid "Ваши заказы"
+msgstr "Your orders"
+
+#: users/templates/account/user/detail.html:30
+msgid "Заказ"
+msgstr "Order"
+
+#: users/templates/account/user/detail.html:30
+msgid "от"
+msgstr "from"
+
+#: users/templates/account/user/detail.html:31
+msgid "на сумму"
+msgstr "price"
+
+#: users/templates/account/user/detail.html:34
+msgid "Вы еще не сделали ни одного заказа"
+msgstr "You have not made any order yet"
+
+#: users/templates/registration/logged_out.html:3
+msgid "Выход"
+msgstr "Log-out"
+
+#: users/templates/registration/logged_out.html:5
+msgid "Вы вышли из профиля"
+msgstr "You are logged-out"
+
+#: users/templates/registration/logged_out.html:7
+msgid "Вы успешно вышли из профиля"
+msgstr "You have successfully logged-out"
+
+#: users/templates/registration/logged_out.html:10
+msgid "войти в профиль еще раз"
+msgstr "You have successfully logged-out"
+
+#: users/templates/registration/login.html:3
+#: users/templates/registration/login.html:6
+#: users/templates/registration/login.html:31
+msgid "Войти"
+msgstr "Log-in"
+
+#: users/templates/registration/login.html:14
+msgid "Пожалуйста, используйте следующую форму, чтобы войти."
+msgstr "Please use the following form to login."
+
+#: users/templates/registration/login.html:17
+msgid "Если у Вас нет аккаунта, Вы можете"
+msgstr "If you don't have an account, you can"
+
+#: users/templates/registration/login.html:17
+msgid "зарегистрироваться здесь"
+msgstr "register here"
+
+#: users/templates/registration/login.html:22
+msgid "Забыли свой пароль?"
+msgstr "Forgot your password?"
+
+#: users/templates/registration/password_change_done.html:3
+#: users/templates/registration/password_change_done.html:6
+msgid "Пароль изменен"
+msgstr "Password changed"
+
+#: users/templates/registration/password_change_done.html:7
+msgid "Ваш пароль был успешно изменен"
+msgstr "Your password has been successfully changed"
+
+#: users/templates/registration/password_change_done.html:8
+msgid "Продолжить покупки"
+msgstr "Continue shopping"
+
+#: users/templates/registration/password_change_form.html:3
+#: users/templates/registration/password_change_form.html:5
+msgid "Изменение пароля"
+msgstr "Change password"
+
+#: users/templates/registration/password_change_form.html:6
+msgid "Используйте форму для смены пароля"
+msgstr "Use the password change form"
+
+#: users/templates/registration/password_change_form.html:9
+msgid "Изменить"
+msgstr "Edit"
+
+#: users/templates/registration/password_reset_complete.html:3
+#: users/templates/registration/password_reset_complete.html:6
+msgid "Пароль обновлен"
+msgstr "Password updated"
+
+#: users/templates/registration/password_reset_complete.html:7
+msgid "Ваш пароль был обновлен"
+msgstr "Your password updated"
+
+#: users/templates/registration/password_reset_confirm.html:3
+#: users/templates/registration/password_reset_confirm.html:6
+msgid "Обновить пароль"
+msgstr "Update password"
+
+#: users/templates/registration/password_reset_confirm.html:8
+msgid "Пожалуйста, введите новый пароль дважды"
+msgstr "Please enter new password twice"
+
+#: users/templates/registration/password_reset_confirm.html:12
+msgid "Сменить мой пароль"
+msgstr "Change my password"
+
+#: users/templates/registration/password_reset_confirm.html:15
+msgid "Ссылка для сброса пароля неверна, возможно она уже была использована"
+msgstr "The password reset link is incorrect, it may have already been used"
+
+#: users/templates/registration/password_reset_confirm.html:16
+msgid "Пожалуйста запросите сброс пароля еще раз"
+msgstr "Please request a password reset again"
+
+#: users/templates/registration/password_reset_done.html:3
+#: users/templates/registration/password_reset_done.html:5
+msgid "Сброс пароля"
+msgstr "Password reset"
+
+#: users/templates/registration/password_reset_done.html:6
+msgid "Мы отправили на Вашу электронную почту инструкцию для сброса пароля"
+msgstr ""
+"We have sent instructions to your email address to reset your password."
+
+#: users/templates/registration/password_reset_done.html:7
+msgid ""
+"Если вы не получили письмо, то проверьте правильность введенного адреса"
+msgstr ""
+"If you did not receive an email, please check that the address you entered "
+"is correct."
+
+#: users/templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+" Кто-то запросил сброс пароля на адрес %(email)s.\n"
+"Для того, чтобы сбросить пароль, перейдите по ссылке: "
+msgstr ""
+" Someone has requested a password reset on the address %(email)s.\n"
+"To reset your password, follow the link: "
+
+#: users/templates/registration/password_reset_email.html:6
+msgid "Если вы не запрашивали это письмо, то игнорируйте его"
+msgstr "If you did not request this letter, then ignore it"
+
+#: users/templates/registration/password_reset_form.html:3
+msgid "Сбросить пароль"
+msgstr "Reset password"
+
+#: users/templates/registration/password_reset_form.html:5
+msgid "Забыли свой пароль"
+msgstr "Forgot your password"
+
+#: users/templates/registration/password_reset_form.html:6
+msgid "Введите ваш email адрес, чтобы восстановить пароль"
+msgstr "Enter your email address to recover your password"
+
+#: users/templates/registration/password_reset_form.html:9
+msgid "Отправить сообщение"
+msgstr "Send a message"

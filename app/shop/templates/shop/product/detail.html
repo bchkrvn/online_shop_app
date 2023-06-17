@@ -1,4 +1,5 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}
@@ -15,16 +16,16 @@
       </a>
     </h2>
     <p class="price">{{ product.price }} ₽</p>
-    <p class="amount">Осталось: {{ product.quantity }} шт</p>
+    <p class="amount">{% blocktrans %}Осталось: {{ product.quantity }} шт{% endblocktrans %}</p>
     <form action="{% url "cart:cart_add" product.id %}" method="post">
       {{ cart_product_form }}
       {% csrf_token %}
-      <br><br><input type="submit" value="Добавить в корзину">
+      <br><br><input type="submit" value="{% trans 'Добавить в корзину' %}">
     </form>
     {{ product.description|linebreaks }}
     {% if recommended_products %}
       <div class="recommendations">
-      <h3>Рекомендуем Вам также посмотреть:</h3>
+      <h3>{% trans 'Рекомендуем Вам также посмотреть:' %}</h3>
       {% for p in recommended_products %}
         <div class="item">
           <a href="{{ p.get_absolute_url }}">

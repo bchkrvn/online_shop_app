@@ -1,12 +1,13 @@
 {% extends "shop/base.html" %}
-{% block title %}Редактирование аккаунта{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Редактирование аккаунта' %}{% endblock %}
 
 {% block content %}
-  <h1>Редактирование вашего аккаунта</h1>
-  <p>Вы можете изменить Ваш аккаунт используя форму:</p>
+  <h1>{% trans 'Редактирование вашего аккаунта' %}</h1>
+  <p>{% trans 'Вы можете изменить Ваш аккаунт используя форму' %}:</p>
   <form method="post" enctype="multipart/form-data">
     {{ user_form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Сохранить изменения"></p>
+    <p><input type="submit" value="{% trans 'Сохранить изменения' %}"></p>
   </form>
 {% endblock %}
