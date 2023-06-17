@@ -10,6 +10,7 @@ class CouponApplyView(View):
     def post(self, request):
         now = timezone.now()
         form = CouponApplyForm(request.POST)
+
         if form.is_valid():
             code = form.cleaned_data['code']
             try:
@@ -18,6 +19,7 @@ class CouponApplyView(View):
                                             valid_to__gte=now,
                                             active=True)
                 request.session['coupon_id'] = coupon.pk
+
             except Coupon.DoesNotExist:
                 request.session['coupon_id'] = None
 

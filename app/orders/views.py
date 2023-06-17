@@ -13,6 +13,7 @@ class OrderCreateView(View):
     def post(self, request, *args, **kwargs):
         cart = Cart(request)
         form = OrderCreateForm(request.POST)
+
         if form.is_valid():
             order = form.save(commit=False)
             if cart.coupon:
@@ -35,10 +36,7 @@ class OrderCreateView(View):
             Recommender().products_bought([item['product'] for item in cart])
             cart.clear()
             request.session['coupon_id'] = None
-
             order_created.delay(order.id)
-
-
 
             return render(request, 'orders/order/created.html', {'new_order': order})
 

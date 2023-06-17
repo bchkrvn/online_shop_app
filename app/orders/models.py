@@ -35,16 +35,16 @@ class Order(models.Model):
         verbose_name_plural = 'Заказы'
 
     def __str__(self):
-        return f'Order {self.id}'
+        return f'Order {self.pk}'
 
-    def get_total_cost(self):
+    def get_total_cost(self) -> Decimal:
         total_cost = self.get_total_cost_before_discount()
         return total_cost - self.get_discount()
 
-    def get_total_cost_before_discount(self):
+    def get_total_cost_before_discount(self) -> Decimal:
         return sum(item.get_cost() for item in self.items.all())
 
-    def get_discount(self):
+    def get_discount(self) -> Decimal:
         total_cost = self.get_total_cost_before_discount()
         if self.discount:
             return Decimal(round(total_cost * (self.discount / Decimal(100)), 2))
@@ -71,7 +71,7 @@ class OrderItem(models.Model):
     def __str__(self):
         return str(self.pk)
 
-    def get_cost(self):
+    def get_cost(self) -> Decimal:
         return self.price * self.quantity
 
     class Meta:

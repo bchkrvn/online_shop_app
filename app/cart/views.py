@@ -45,9 +45,8 @@ class CartDetailView(View):
                 'override': True
             })
 
-        r = Recommender()
         if cart_products:
-            recommended_products = r.submit_products_for(cart_products, max_results=4)
+            recommended_products = Recommender().submit_products_for(cart_products, max_results=4)
         else:
             recommended_products = []
 

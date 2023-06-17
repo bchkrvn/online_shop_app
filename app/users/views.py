@@ -24,8 +24,7 @@ class RegisterView(View):
 class UserView(View):
     def get(self, request):
         user = request.user
-        return render(request, 'account/user/detail.html', {'user': user,
-                                                            'orders': user.orders.all()})
+        return render(request, 'account/user/detail.html', {'user': user, 'orders': user.orders.all()})
 
 
 class UserEditView(View):
@@ -57,5 +56,4 @@ class UserDeleteView(View):
 
     def get(self, request):
         delete_form = UserDeleteForm(user=request.user)
-
         return render(request, 'account/delete.html', {'delete_form': delete_form})
