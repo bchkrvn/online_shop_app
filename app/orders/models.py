@@ -11,7 +11,7 @@ from users.models import User
 
 
 class Order(models.Model):
-    user = models.ForeignKey(_('Заказчик'), User, related_name='orders', on_delete=models.CASCADE, null=True,
+    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE, null=True,
                              blank=True)
     address = models.CharField(_('Адрес'), max_length=250)
     postal_code = models.CharField(_('Почтовый индекс'), max_length=20)
@@ -19,7 +19,7 @@ class Order(models.Model):
     created = models.DateTimeField(_('Создан'), auto_now_add=True)
     updated = models.DateTimeField(_('Обновлен'), auto_now=True)
     paid = models.BooleanField(_('Оплачен'), default=False)
-    coupon = models.ForeignKey(_('Промокод'), Coupon,
+    coupon = models.ForeignKey(Coupon,
                                related_name='orders',
                                null=True,
                                blank=True,
@@ -60,10 +60,10 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(_('Заказ'), Order,
+    order = models.ForeignKey(Order,
                               related_name='items',
                               on_delete=models.CASCADE)
-    product = models.ForeignKey(_('Товар'), Product,
+    product = models.ForeignKey(Product,
                                 related_name='order_items',
                                 on_delete=models.CASCADE)
     price = models.DecimalField(_('Цена'), max_digits=10, decimal_places=2)
