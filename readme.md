@@ -24,6 +24,7 @@
 1) Сделать копию данного репозитория:   
 `git clone https://github.com/bchkrvn/online_shop_app.git`
 2) Перейти в папку **docker** и создать переменные окружения в файлах app.env, db.env, rabbitmq.env.  
+
 В app.env нужно задать следующие параметры:
 ```
 DB_NAME
@@ -38,8 +39,6 @@ EMAIL_PORT
 DEBUG
 CELERY_BROKER_URL
 DJANGO_SETTINGS_MODULE
-RABBITMQ_DEFAULT_USER
-RABBITMQ_DEFAULT_PASS
 SECRET_KEY
 REDIS_HOST
 REDIS_PORT
@@ -51,10 +50,6 @@ POSTGRES_USER
 POSTGRES_PASSWORD
 POSTGRES_DB
 ```
-в rabbitmq.env:
-```
-RABBITMQ_DEFAULT_USER
-RABBITMQ_DEFAULT_PASS
-```
-3) выполнить команду:
+
+3) Выполнить команду:
 `docker-compose up -d`
