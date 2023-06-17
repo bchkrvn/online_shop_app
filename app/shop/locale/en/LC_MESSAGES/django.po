@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 18:33+0300\n"
-"PO-Revision-Date: 2023-06-17 18:34+0300\n"
+"POT-Creation-Date: 2023-06-17 21:48+0300\n"
+"PO-Revision-Date: 2023-06-17 21:50+0300\n"
 "Last-Translator: Nikita Bochkarev <asderus@yandex.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -71,7 +71,7 @@ msgstr "Quantity"
 msgid "Товар"
 msgstr "Product"
 
-#: shop/models.py:45 shop/templates/shop/base.html:41
+#: shop/models.py:45 shop/templates/shop/base.html:57
 #: shop/templates/shop/product/list.html:6
 #: shop/templates/shop/product/list.html:24
 msgid "Товары"
@@ -81,43 +81,49 @@ msgstr "Products"
 msgid "Вернуться на главную страницу"
 msgstr "Return to main page"
 
-#: shop/templates/shop/base.html:7 shop/templates/shop/base.html:12
+#: shop/templates/shop/base.html:7 shop/templates/shop/base.html:13
 msgid "Семерочка"
 msgstr "Semerochka"
 
-#: shop/templates/shop/base.html:20
+#: shop/templates/shop/base.html:17
+msgid "Язык"
+msgstr "Language"
+
+#: shop/templates/shop/base.html:36
 msgid "Ваша корзина:"
 msgstr "Your cart"
 
-#: shop/templates/shop/base.html:23
+#: shop/templates/shop/base.html:39
 msgid "товар"
 msgstr "product"
 
-#: shop/templates/shop/base.html:25
+#: shop/templates/shop/base.html:41
 msgid "товара"
 msgstr "products"
 
-#: shop/templates/shop/base.html:27
+#: shop/templates/shop/base.html:43
 msgid "товаров"
 msgstr "products"
 
-#: shop/templates/shop/base.html:29
-#, python-format
-msgid "на %(cart.get_total_price)s ₽"
-msgstr ", %(cart.get_total_price)s ₽"
+#: shop/templates/shop/base.html:45
+msgid "на"
+msgstr "for"
 
-#: shop/templates/shop/base.html:33
+#: shop/templates/shop/base.html:49
 msgid "Ваша корзина пуста"
 msgstr "Your cart is empty"
 
-#: shop/templates/shop/base.html:38
+#: shop/templates/shop/base.html:54
 msgid "Мой профиль"
 msgstr "My profile"
 
 #: shop/templates/shop/product/detail.html:19
-#, python-format
-msgid "Осталось: %(product.quantity)s шт"
-msgstr "Remaining %(product.quantity)s pieces"
+msgid "Осталось"
+msgstr "Left"
+
+#: shop/templates/shop/product/detail.html:19
+msgid "шт"
+msgstr "pieces"
 
 #: shop/templates/shop/product/detail.html:23
 msgid "Добавить в корзину"
@@ -126,3 +132,15 @@ msgstr "Add to cart"
 #: shop/templates/shop/product/detail.html:28
 msgid "Рекомендуем Вам также посмотреть:"
 msgstr "People who bought this also bought:"
+
+#: shop/templates/shop/product/list.html:14
+msgid "Все"
+msgstr "All"
+
+#, python-format
+#~ msgid "на %(cart.get_total_price)s ₽"
+#~ msgstr ",  %(cart.get_total_price)s ₽"
+
+#, python-format
+#~ msgid "Осталось: %(product.quantity)s шт"
+#~ msgstr "Remaining %(product.quantity)s pieces"

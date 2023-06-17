@@ -16,7 +16,7 @@
       </a>
     </h2>
     <p class="price">{{ product.price }} ₽</p>
-    <p class="amount">{% blocktrans %}Осталось: {{ product.quantity }} шт{% endblocktrans %}</p>
+    <p class="amount">{% trans 'Осталось' %}: {{ product.quantity }} {% trans 'шт' %}</p>
     <form action="{% url "cart:cart_add" product.id %}" method="post">
       {{ cart_product_form }}
       {% csrf_token %}

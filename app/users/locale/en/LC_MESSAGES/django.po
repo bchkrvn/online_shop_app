@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 18:33+0300\n"
-"PO-Revision-Date: 2023-06-17 18:34+0300\n"
+"POT-Creation-Date: 2023-06-17 19:11+0300\n"
+"PO-Revision-Date: 2023-06-17 21:46+0300\n"
 "Last-Translator: Nikita Bochkarev <asderus@yandex.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,7 +20,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: users/apps.py:8
-#| msgid "Имя пользователя"
 msgid "Пользователи"
 msgstr "Users"
 
@@ -227,7 +226,7 @@ msgstr "You have successfully logged-out"
 
 #: users/templates/registration/logged_out.html:10
 msgid "войти в профиль еще раз"
-msgstr "You have successfully logged-out"
+msgstr "log-in again"
 
 #: users/templates/registration/login.html:3
 #: users/templates/registration/login.html:6
@@ -322,16 +321,15 @@ msgid ""
 "Если вы не получили письмо, то проверьте правильность введенного адреса"
 msgstr ""
 "If you did not receive an email, please check that the address you entered "
-"is correct."
+"is correct"
 
 #: users/templates/registration/password_reset_email.html:2
-#, python-format
-msgid ""
-" Кто-то запросил сброс пароля на адрес %(email)s.\n"
-"Для того, чтобы сбросить пароль, перейдите по ссылке: "
-msgstr ""
-" Someone has requested a password reset on the address %(email)s.\n"
-"To reset your password, follow the link: "
+msgid "Кто-то запросил сброс пароля на адрес"
+msgstr " Someone has requested a password reset on the address"
+
+#: users/templates/registration/password_reset_email.html:3
+msgid "Для того, чтобы сбросить пароль, перейдите по ссылке"
+msgstr "To reset your password, follow the link"
 
 #: users/templates/registration/password_reset_email.html:6
 msgid "Если вы не запрашивали это письмо, то игнорируйте его"

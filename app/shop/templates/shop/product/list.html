@@ -11,7 +11,7 @@
     <h1>{% trans 'Категории' %}</h1>
     <ul>
       <li {% if not category %}class="selected"{% endif %}>
-        <a href="{% url "shop:product_list" %}">Все</a>
+        <a href="{% url "shop:product_list" %}">{% trans 'Все' %}</a>
       </li>
       {% for c in categories %}
         <li {% if category.slug == c.slug %}class="selected"{% endif %}>

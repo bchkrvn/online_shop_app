@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 18:33+0300\n"
-"PO-Revision-Date: 2023-06-17 18:17+0300\n"
+"POT-Creation-Date: 2023-06-17 21:48+0300\n"
+"PO-Revision-Date: 2023-06-17 21:49+0300\n"
 "Last-Translator: Nikita Bochkarev <asderus@yandex.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -51,15 +51,16 @@ msgstr "Paid"
 msgid "Скидка"
 msgstr "Discount"
 
-#: orders/models.py:36
+#: orders/models.py:36 orders/templates/orders/order/detail.html:5
+#: orders/templates/orders/order/detail.html:10
 msgid "Заказ"
 msgstr "Order"
 
-#: orders/models.py:69
+#: orders/models.py:69 orders/templates/orders/order/detail.html:32
 msgid "Цена"
 msgstr "Price"
 
-#: orders/models.py:71
+#: orders/models.py:71 orders/templates/orders/order/detail.html:30
 msgid "Количество"
 msgstr "Quantity"
 
@@ -97,9 +98,34 @@ msgstr "Checkout"
 msgid "Спасибо за заказ!"
 msgstr "Thank you for order!"
 
+#: orders/templates/orders/order/created.html:9
+#| msgid "Спасибо за заказ!"
+msgid "Благодарим за заказ!"
+msgstr "Thank you for order!"
+
 #: orders/templates/orders/order/created.html:10
 msgid "Ваш заказ был успешно оформлен. Номер Вашего заказа"
 msgstr "Your order has been successfully placed. Your order number"
+
+#: orders/templates/orders/order/detail.html:11
+msgid "Покупатель"
+msgstr "Buyer"
+
+#: orders/templates/orders/order/detail.html:13
+msgid "Электронная почта"
+msgstr "E-mail"
+
+#: orders/templates/orders/order/detail.html:15
+msgid "Адрес доставки"
+msgstr "Delivery address"
+
+#: orders/templates/orders/order/detail.html:17
+msgid "Дата заказа"
+msgstr "Order date"
+
+#: orders/templates/orders/order/detail.html:19
+msgid "Статус заказа"
+msgstr "Order status"
 
 #: orders/templates/orders/order/detail.html:20
 msgid "Оплачено"
@@ -108,6 +134,27 @@ msgstr "Paid"
 #: orders/templates/orders/order/detail.html:20
 msgid "Не оплачено"
 msgstr "Not Paid"
+
+#: orders/templates/orders/order/detail.html:24
+#| msgid "Дата заказа"
+msgid "Состав заказа"
+msgstr "Order list"
+
+#: orders/templates/orders/order/detail.html:28
+msgid "Изображение"
+msgstr "Image"
+
+#: orders/templates/orders/order/detail.html:29
+msgid "Товар"
+msgstr "Product"
+
+#: orders/templates/orders/order/detail.html:31
+msgid "Цена за единицу"
+msgstr "Unit price"
+
+#: orders/templates/orders/order/detail.html:55
+msgid "Промежуточный итог"
+msgstr "Subtotal"
 
 #: orders/templates/orders/order/detail.html:61
 msgid "Купон"
@@ -126,6 +173,3 @@ msgstr "You do not have access to this order"
 
 #~ msgid "Промокод"
 #~ msgstr "Coupon"
-
-#~ msgid "Товар"
-#~ msgstr "Product"

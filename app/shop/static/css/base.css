@@ -156,6 +156,9 @@ ul.errorlist {
     text-decoration: none;
     color: #333;
     font-size: 30px;
+    display: block;
+    text-align:center;
+
 }
 
 #subheader .cart {

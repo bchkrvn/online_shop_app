@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 18:33+0300\n"
+"POT-Creation-Date: 2023-06-17 21:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,15 +52,16 @@ msgstr ""
 msgid "Скидка"
 msgstr ""
 
-#: orders/models.py:36
+#: orders/models.py:36 orders/templates/orders/order/detail.html:5
+#: orders/templates/orders/order/detail.html:10
 msgid "Заказ"
 msgstr ""
 
-#: orders/models.py:69
+#: orders/models.py:69 orders/templates/orders/order/detail.html:32
 msgid "Цена"
 msgstr ""
 
-#: orders/models.py:71
+#: orders/models.py:71 orders/templates/orders/order/detail.html:30
 msgid "Количество"
 msgstr ""
 
@@ -98,8 +99,32 @@ msgstr ""
 msgid "Спасибо за заказ!"
 msgstr ""
 
+#: orders/templates/orders/order/created.html:9
+msgid "Благодарим за заказ!"
+msgstr ""
+
 #: orders/templates/orders/order/created.html:10
 msgid "Ваш заказ был успешно оформлен. Номер Вашего заказа"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:11
+msgid "Покупатель"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:13
+msgid "Электронная почта"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:15
+msgid "Адрес доставки"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:17
+msgid "Дата заказа"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:19
+msgid "Статус заказа"
 msgstr ""
 
 #: orders/templates/orders/order/detail.html:20
@@ -108,6 +133,26 @@ msgstr ""
 
 #: orders/templates/orders/order/detail.html:20
 msgid "Не оплачено"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:24
+msgid "Состав заказа"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:28
+msgid "Изображение"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:29
+msgid "Товар"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:31
+msgid "Цена за единицу"
+msgstr ""
+
+#: orders/templates/orders/order/detail.html:55
+msgid "Промежуточный итог"
 msgstr ""
 
 #: orders/templates/orders/order/detail.html:61

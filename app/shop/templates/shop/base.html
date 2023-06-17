@@ -9,7 +9,23 @@
 </head>
 <body>
 <div id="header">
-    <a href="/" class="logo"><img src="{% static "img/semerochka.png" %}" height='30px' width='30px'> {% trans "Семерочка" %}</a>
+    {% get_current_language as LANGUAGE_CODE %}
+    <a href="/{{LANGUAGE_CODE}}" class="logo"><img src="{% static "img/semerochka.png" %}" height='30px' width='30px'> {% trans "Семерочка" %}</a>
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    <div class="languages">
+        <p>{% trans "Язык" %}:</p>
+        <ul class="languages">
+            {% for language in languages %}
+            <li>
+                <a href="/{{ language.code }}/"
+                    {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
+                    {{ language.name_local }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 <div id="subheader">
     {%if request.user.is_authenticated%}
@@ -26,7 +42,7 @@
         {% else %}
         {% trans "товаров" %}
         {% endif %}
-        {% blocktrans %}на {{ cart.get_total_price }} ₽{% endblocktrans %}
+        {% trans 'на' %} {{ cart.get_total_price }} ₽
         </a>
         {% elif not new_order %}
         <a href="{% url "cart:cart_detail" %}">

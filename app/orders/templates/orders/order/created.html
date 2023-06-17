@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{$trans 'Благодарим за заказ!' %}</h1>
+  <h1>{% trans 'Благодарим за заказ!' %}</h1>
   <p>{% trans 'Ваш заказ был успешно оформлен. Номер Вашего заказа' %} -
   <strong>{{ new_order.id }}</strong>.</p>
 {% endblock %}

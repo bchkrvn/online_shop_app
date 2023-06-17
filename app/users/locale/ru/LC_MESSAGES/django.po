@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-17 18:33+0300\n"
+"POT-Creation-Date: 2023-06-17 19:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,10 +321,11 @@ msgid "Если вы не получили письмо, то проверьте
 msgstr ""
 
 #: users/templates/registration/password_reset_email.html:2
-#, python-format
-msgid ""
-" Кто-то запросил сброс пароля на адрес %(email)s.\n"
-"Для того, чтобы сбросить пароль, перейдите по ссылке: "
+msgid "Кто-то запросил сброс пароля на адрес"
+msgstr ""
+
+#: users/templates/registration/password_reset_email.html:3
+msgid "Для того, чтобы сбросить пароль, перейдите по ссылке"
 msgstr ""
 
 #: users/templates/registration/password_reset_email.html:6
