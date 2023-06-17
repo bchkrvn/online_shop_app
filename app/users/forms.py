@@ -24,7 +24,7 @@ class UserEditForm(forms.ModelForm):
         qs = User.objects.exclude(id=self.instance.id) \
             .filter(email=data)
         if qs.exists():
-            raise forms.ValidationError('Email already in use.')
+            raise forms.ValidationError('Этот адрес электронной почты уже используется')
         return data
 
     def clean_username(self):
@@ -32,7 +32,7 @@ class UserEditForm(forms.ModelForm):
         qs = User.objects.exclude(id=self.instance.id) \
             .filter(username=data)
         if qs.exists():
-            raise forms.ValidationError('Username already in use.')
+            raise forms.ValidationError('Имя пользователя занято')
         return data
 
     def clean_birth_date(self):
@@ -91,9 +91,7 @@ class CustomAuthenticationForm(AuthenticationForm):
     )
 
     error_messages = {
-        "invalid_login": _(
-            "Пожалуйста, введите корректную почту или имя пользователя и пароль."
-        ),
+        "invalid_login": _("Пожалуйста, введите корректную почту или имя пользователя и пароль."),
         "inactive": _("Этот аккаунт не активен"),
     }
 
@@ -101,9 +99,7 @@ class CustomAuthenticationForm(AuthenticationForm):
 class CustomPasswordChangeForm(PasswordChangeForm):
     error_messages = {
         "password_mismatch": _("Новые пароли не совпадают между собой"),
-        "password_incorrect": _(
-            "Ваш старый пароль введен некорректно, пожалуйста, попробуйте еще раз."
-        ),
+        "password_incorrect": _("Ваш старый пароль введен некорректно, пожалуйста, попробуйте еще раз."),
     }
     old_password = forms.CharField(
         label=_("Старый пароль"),
