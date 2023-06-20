@@ -10,7 +10,7 @@ class ProductsList(ListView):
 
     def get(self, request, category_slug=None, *args, **kwargs):
         category = None
-        products = Product.objects.filter(available=True, quantity__gt=0)
+        products = Product.objects.filter(available=True)
         if category_slug:
             category = get_object_or_404(Category, slug=category_slug)
             products = products.filter(category=category)

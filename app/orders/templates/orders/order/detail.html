@@ -13,7 +13,7 @@
     <h2>{% trans 'Электронная почта' %}</h2>
     <h3>{{ order.user.email }}</h3>
     <h2>{% trans 'Адрес доставки' %}</h2>
-    <h3>{{ order.postal_code }}, г.{{ order.city }}, {{ order.address }}</h3>
+    <h3>{{ order.postal_code }}, {{ order.city }}, {{ order.address }}</h3>
     <h2>{% trans 'Дата заказа' %}</h2>
     <h3>{{ order.get_created_date }}</h3>
     <h2>{% trans 'Статус заказа' %}</h2>
