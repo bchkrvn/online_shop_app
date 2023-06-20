@@ -42,7 +42,7 @@
         {% else %}
         {% trans "товаров" %}
         {% endif %}
-        {% trans 'на' %} {{ cart.get_total_price }} ₽
+        {% trans 'на' %} {{ cart.get_total_price_with_discount }} ₽
         </a>
         {% elif not new_order %}
         <a href="{% url "cart:cart_detail" %}">
