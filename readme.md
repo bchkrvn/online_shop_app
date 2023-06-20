@@ -13,6 +13,9 @@
 * Celery
 
 ## Возможности проекта:
+Видео на Youtube:
+[![Watch the video](https://img.youtube.com/vi/HWYuS3iw2mw/maxresdefault.jpg)](https://youtu.be/HWYuS3iw2mw)
+
 * Регистрация, аутентификация, смена пароля через почту.
 * Список продуктов, детальная информация о продукте
 * Корзина, оформление заказа, уведомление о заказе на email
