@@ -6,7 +6,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     env_file:
-      - db.env
+      - docker.env
     restart: always
     ports:
       - "5432:5432"
@@ -33,7 +33,7 @@ services:
     build:
       context: ../app
     env_file:
-      - app.env
+      - docker.env
     ports:
       - "80:80"
     command: bash -c "

@@ -29,7 +29,7 @@
 `git clone https://github.com/bchkrvn/online_shop_app.git`
 2) Перейти в папку **docker** и создать переменные окружения в файлах app.env и db.env.  
 
-В app.env нужно задать следующие параметры:
+В **docker.env** нужно задать следующие параметры:
 ```
 DB_NAME
 DB_USER
@@ -47,9 +47,6 @@ SECRET_KEY
 REDIS_HOST
 REDIS_PORT
 REDIS_DB
-```
-В db.env:
-```
 POSTGRES_USER
 POSTGRES_PASSWORD
 POSTGRES_DB
