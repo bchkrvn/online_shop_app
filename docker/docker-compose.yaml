@@ -29,22 +29,38 @@ services:
     volumes:
       - rabbitmq:/var/lib/rabbitmq
 
+  migrations:
+    build: ../app/.
+    env_file:
+      - docker.env
+
+    command: python manage.py migrate
+    depends_on:
+      - db
   app:
-    build:
-      context: ../app
+    build: ../app/.
+    tty: true
     env_file:
       - docker.env
     ports:
       - "80:80"
-    command: bash -c "
-      python manage.py migrate
-      && celery -A myshop worker -l info
-      & python manage.py runserver 0.0.0.0:80
-      "
+    command: python manage.py runserver 0.0.0.0:80
     depends_on:
       - db
       - rabbitmq
+      - migrations
+    volumes:
+      - ../app:/code/
 
+  celery:
+    build: ../app/.
+    env_file:
+      - docker.env
+    command: celery -A myshop worker -l info
+    depends_on:
+      - db
+      - rabbitmq
+      - app
 
 volumes:
   postgres_data:
