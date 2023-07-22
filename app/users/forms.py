@@ -11,13 +11,6 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'username', 'birth_date', ]
-        # labels = {
-        #     "first_name": "Имя",
-        #     "last_name": "Фамилия",
-        #     "email": "Электронная почта",
-        #     "birth_date": "Дата рождения (год-месяц-день)",
-        #     'username': 'Имя пользователя',
-        # }
 
     def clean_email(self):
         data = self.cleaned_data['email']

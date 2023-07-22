@@ -33,7 +33,6 @@ services:
     build: ../app/.
     env_file:
       - docker.env
-
     command: python manage.py migrate
     depends_on:
       - db

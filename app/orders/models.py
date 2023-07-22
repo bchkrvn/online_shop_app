@@ -11,22 +11,15 @@ from users.models import User
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE, null=True,
-                             blank=True)
+    user = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE, null=True, blank=True)
     address = models.CharField(_('Адрес'), max_length=250)
     postal_code = models.CharField(_('Почтовый индекс'), max_length=20)
     city = models.CharField(_('Город'), max_length=100)
     created = models.DateTimeField(_('Создан'), auto_now_add=True)
     updated = models.DateTimeField(_('Обновлен'), auto_now=True)
     paid = models.BooleanField(_('Оплачен'), default=False)
-    coupon = models.ForeignKey(Coupon,
-                               related_name='orders',
-                               null=True,
-                               blank=True,
-                               on_delete=models.SET_NULL)
-    discount = models.IntegerField(_('Скидка'), default=0,
-                                   validators=[MinValueValidator(0),
-                                               MaxValueValidator(100)])
+    coupon = models.ForeignKey(Coupon, related_name='orders', null=True, blank=True, on_delete=models.SET_NULL)
+    discount = models.IntegerField(_('Скидка'), default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
     class Meta:
         ordering = ['-created']
@@ -60,14 +53,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order,
-                              related_name='items',
-                              on_delete=models.CASCADE)
-    product = models.ForeignKey(Product,
-                                related_name='order_items',
-                                on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='order_items', on_delete=models.CASCADE)
     price = models.DecimalField(_('Цена'), max_digits=10, decimal_places=2)
-
     quantity = models.PositiveIntegerField(_('Количество'), default=1)
 
     def __str__(self):
